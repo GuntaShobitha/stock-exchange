@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>STACKLY — Intelligent Stock Exchange & Investment Platform</title>
+<meta name="description" content="STACKLY is a professional stock exchange platform offering real-time market data, institutional-grade execution, and AI-driven insights for traders and investors."/>
+<link rel="icon" type="image/webp" href="./images/logo-dark.webp"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"/>
+<link rel="stylesheet" href="./css/styles.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img"/></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Insights</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn btn-primary">Login</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- 1 HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div data-anim="left">
+      <span class="eyebrow"><span class="dot"></span> Markets Open · NYSE · NASDAQ</span>
+      <h1>Trade smarter on the world's most <span class="accent">trusted exchange</span>.</h1>
+      <p class="lead">STACKLY connects institutions and individual investors to global equities, ETFs and derivatives with sub-millisecond execution and Tier-1 liquidity.</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary">Start Investing →</a>
+        <a href="services.html" class="btn btn-ghost">Explore Markets</a>
+      </div>
+      <div class="hero-meta">
+        <div class="m"><b data-count="2.4" data-suffix="T">0</b><span>Assets traded annually</span></div>
+        <div class="m"><b data-count="180" data-suffix="+">0</b><span>Global markets</span></div>
+        <div class="m"><b data-count="99.99" data-suffix="%">0</b><span>Platform uptime</span></div>
+      </div>
+    </div>
+    <div data-anim="right" data-delay="2">
+      <div class="ticker-card">
+        <div class="ticker-head"><h3>Live Watchlist</h3><span class="live-tag">● LIVE</span></div>
+        <div class="tk-row"><div><div class="tk-sym">AAPL</div><span class="tk-name">Apple Inc.</span></div><div><div class="tk-price" data-ticker="232.84">232.84</div><span class="tk-chg up">+0.00%</span></div></div>
+        <div class="tk-row"><div><div class="tk-sym">MSFT</div><span class="tk-name">Microsoft</span></div><div><div class="tk-price" data-ticker="448.12">448.12</div><span class="tk-chg up">+0.00%</span></div></div>
+        <div class="tk-row"><div><div class="tk-sym">NVDA</div><span class="tk-name">NVIDIA</span></div><div><div class="tk-price" data-ticker="138.27">138.27</div><span class="tk-chg up">+0.00%</span></div></div>
+        <div class="tk-row"><div><div class="tk-sym">TSLA</div><span class="tk-name">Tesla</span></div><div><div class="tk-price" data-ticker="244.50">244.50</div><span class="tk-chg up">+0.00%</span></div></div>
+        <div class="tk-row"><div><div class="tk-sym">GOOG</div><span class="tk-name">Alphabet</span></div><div><div class="tk-price" data-ticker="172.91">172.91</div><span class="tk-chg up">+0.00%</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">S&P 500 <b class="up">5,891.42 ▲ 1.24%</b></span>
+    <span class="marquee-item">DOW <b class="up">42,180.55 ▲ 0.74%</b></span>
+    <span class="marquee-item">NASDAQ <b class="up">18,920.10 ▲ 1.62%</b></span>
+    <span class="marquee-item">FTSE 100 <b class="down">8,210.34 ▼ 0.21%</b></span>
+    <span class="marquee-item">NIKKEI <b class="up">39,580.87 ▲ 0.55%</b></span>
+    <span class="marquee-item">DAX <b class="up">19,310.22 ▲ 0.41%</b></span>
+    <span class="marquee-item">BTC/USD <b class="up">68,420 ▲ 2.10%</b></span>
+    <span class="marquee-item">GOLD <b class="up">2,684.30 ▲ 0.84%</b></span>
+    <span class="marquee-item">S&P 500 <b class="up">5,891.42 ▲ 1.24%</b></span>
+    <span class="marquee-item">DOW <b class="up">42,180.55 ▲ 0.74%</b></span>
+    <span class="marquee-item">NASDAQ <b class="up">18,920.10 ▲ 1.62%</b></span>
+    <span class="marquee-item">FTSE 100 <b class="down">8,210.34 ▼ 0.21%</b></span>
+    <span class="marquee-item">NIKKEI <b class="up">39,580.87 ▲ 0.55%</b></span>
+    <span class="marquee-item">DAX <b class="up">19,310.22 ▲ 0.41%</b></span>
+  </div>
+</div>
+
+<!-- NEW SECTION: Market News Ticker -->
+<div class="news-ticker">
+  <div class="container news-ticker-inner">
+    <span class="news-ticker-label">Breaking</span>
+    <div class="news-ticker-scroll">
+      <div class="news-ticker-items">
+        <span class="news-ticker-item"><span class="time">12:34</span> Fed signals potential rate hold through Q3 as inflation moderates</span>
+        <span class="news-ticker-item"><span class="time">12:18</span> NVDA reaches new all-time high following analyst upgrade</span>
+        <span class="news-ticker-item"><span class="time">11:56</span> Oil prices stabilize after OPEC+ maintains production targets</span>
+        <span class="news-ticker-item"><span class="time">11:32</span> European markets edge higher on positive GDP data</span>
+        <span class="news-ticker-item"><span class="time">11:08</span> TSLA announces expanded Gigafactory plans in Europe</span>
+        <span class="news-ticker-item"><span class="time">10:44</span> Apple reports record services revenue in Q2 earnings</span>
+        <span class="news-ticker-item"><span class="time">12:34</span> Fed signals potential rate hold through Q3 as inflation moderates</span>
+        <span class="news-ticker-item"><span class="time">12:18</span> NVDA reaches new all-time high following analyst upgrade</span>
+        <span class="news-ticker-item"><span class="time">11:56</span> Oil prices stabilize after OPEC+ maintains production targets</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3 FEATURES -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-anim>
+      <span class="eyebrow">Why STACKLY</span>
+      <h2>Built for the people who move markets.</h2>
+      <p>Institutional infrastructure, retail simplicity. Every feature engineered for clarity, speed, and trust.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card" data-anim data-delay="1"><div class="icon">⚡</div><h3>Sub-millisecond Execution</h3><p>Co-located matching engines route your order at the speed of light through Tier-1 venues.</p><span class="arrow">→</span></div>
+      <div class="card" data-anim data-delay="2"><div class="icon">🛡</div><h3>Bank-Grade Custody</h3><p>SIPC-insured, segregated client funds with cold-storage protocols for digital assets.</p><span class="arrow">→</span></div>
+      <div class="card" data-anim data-delay="3"><div class="icon">📈</div><h3>Pro-Grade Analytics</h3><p>Real-time order book depth, Level 2 quotes, and custom indicator scripting on every chart.</p><span class="arrow">→</span></div>
+      <div class="card" data-anim data-delay="1"><div class="icon">🌍</div><h3>180+ Global Markets</h3><p>One account, full access — from Wall Street to Tokyo, in your local currency.</p><span class="arrow">→</span></div>
+      <div class="card" data-anim data-delay="2"><div class="icon">🤖</div><h3>AI Research Co-Pilot</h3><p>Natural-language stock screening, earnings summaries and sentiment heatmaps.</p><span class="arrow">→</span></div>
+      <div class="card" data-anim data-delay="3"><div class="icon">💼</div><h3>Wealth Management</h3><p>Build, rebalance and tax-optimize portfolios with our advisor desk on call 24/5.</p><span class="arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 SPLIT -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="split">
+      <div class="split-img" data-anim="left">
+        <img src="./images/advisor.webp" alt="Trader analyzing markets" width="1000" height="1200" loading="lazy"/>
+        <div class="badge">📊 Real Portfolio Performance · +28.4% YTD</div>
+      </div>
+      <div class="split-text" data-anim="right">
+        <span class="eyebrow">The Trading Desk</span>
+        <h2>Professional tools, redesigned for clarity.</h2>
+        <p>Our flagship terminal brings Bloomberg-class workflows into a modern, browser-native experience. One canvas for charts, screeners, news, and order routing.</p>
+        <ul class="ck-list">
+          <li>120+ technical indicators with custom Pine-style scripting</li>
+          <li>Hot-key trading, bracket orders, and one-click hedging</li>
+          <li>Streaming news from Reuters, Dow Jones, and Benzinga</li>
+          <li>Customizable workspaces synced across devices</li>
+        </ul>
+        <a href="services.html" class="btn btn-primary">See the Terminal →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 STATS -->
+<section class="section">
+  <div class="container">
+    <div class="stats" data-anim="zoom">
+      <div class="stat"><b data-count="3.2" data-suffix="M+">0</b><span>Active investors</span></div>
+      <div class="stat"><b data-count="48" data-suffix="B">0</b><span>Daily volume USD</span></div>
+      <div class="stat"><b data-count="0.01" data-suffix="ms">0</b><span>Avg. order latency</span></div>
+      <div class="stat"><b data-count="22" data-suffix=" yrs">0</b><span>On Wall Street</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 SPLIT 2 -->
+<section class="section">
+  <div class="container">
+    <div class="split reverse">
+      <div class="split-img" data-anim="right">
+        <img src="./images/mobile.webp" alt="Mobile trading app" width="1200" height="800" loading="lazy"/>
+      </div>
+      <div class="split-text" data-anim="left">
+        <span class="eyebrow">Mobile First</span>
+        <h2>Your portfolio in your pocket.</h2>
+        <p>A redesigned mobile experience that doesn't compromise. Same execution engine, same data feeds, half the friction. Available on iOS and Android.</p>
+        <ul class="ck-list">
+          <li>Biometric authentication & hardware-key support</li>
+          <li>Push alerts for price triggers, earnings, and news</li>
+          <li>Voice search across 12,000+ instruments</li>
+          <li>Dark-mode native, Apple Watch complications</li>
+        </ul>
+        <a href="contact.html" class="btn btn-ghost">Download App</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 PRICING -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head" data-anim>
+      <span class="eyebrow">Pricing</span>
+      <h2>Transparent, simple, no surprises.</h2>
+      <p>Pay for what you trade — never for inactivity, data, or basic features.</p>
+    </div>
+    <div class="pricing">
+      <div class="plan" data-anim data-delay="1">
+        <h3>Starter</h3>
+        <div class="price">$0<small>/month</small></div>
+        <p>Built for new investors learning the markets.</p>
+        <ul>
+          <li>✓ Commission-free US stocks & ETFs</li>
+          <li>✓ Real-time quotes</li>
+          <li>✓ Mobile + Web app</li>
+          <li>✓ Educational library</li>
+        </ul>
+        <a href="contact.html" class="btn btn-ghost" style="width:100%;justify-content:center">Get Started</a>
+      </div>
+      <div class="plan featured" data-anim data-delay="2">
+        <span class="tag-pop">MOST POPULAR</span>
+        <h3>Active Trader</h3>
+        <div class="price">$29<small>/month</small></div>
+        <p>For traders who need pro tools and deep data.</p>
+        <ul>
+          <li>✓ Everything in Starter</li>
+          <li>✓ Level 2 market depth</li>
+          <li>✓ Advanced charting & scripting</li>
+          <li>✓ Margin & options trading</li>
+          <li>✓ Priority support</li>
+        </ul>
+        <a href="contact.html" class="btn btn-white" style="width:100%;justify-content:center">Start 30-Day Trial</a>
+      </div>
+      <div class="plan" data-anim data-delay="3">
+        <h3>Institutional</h3>
+        <div class="price">Custom<small></small></div>
+        <p>White-glove service for funds and family offices.</p>
+        <ul>
+          <li>✓ Dedicated account manager</li>
+          <li>✓ FIX & API integration</li>
+          <li>✓ Prime brokerage routing</li>
+          <li>✓ Custom reporting</li>
+        </ul>
+        <a href="contact.html" class="btn btn-ghost" style="width:100%;justify-content:center">Talk to Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW SECTION: Platform Integrations -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-anim>
+      <span class="eyebrow">Seamless Integrations</span>
+      <h2>Your tools, connected to our engine.</h2>
+      <p>STACKLY integrates with the platforms you already use — from data providers to execution management systems.</p>
+    </div>
+    <div class="integrations-grid">
+      <div class="integration-card" data-anim data-delay="1"><span class="icn">📊</span><h4>Bloomberg</h4><p>Real-time data & trade blotter integration</p></div>
+      <div class="integration-card" data-anim data-delay="2"><span class="icn">📈</span><h4>TradingView</h4><p>Charts & indicators synced directly</p></div>
+      <div class="integration-card" data-anim data-delay="3"><span class="icn">🔄</span><h4>QuickBooks</h4><p>Auto-import trade confirmations & P&L</p></div>
+      <div class="integration-card" data-anim data-delay="4"><span class="icn">💰</span><h4>TurboTax</h4><p>One-click tax report generation</p></div>
+      <div class="integration-card" data-anim data-delay="1"><span class="icn">📱</span><h4>Apple Watch</h4><p>Portfolio glance & price alerts</p></div>
+      <div class="integration-card" data-anim data-delay="2"><span class="icn">🤖</span><h4>Slack</h4><p>Trade confirmations & alerts</p></div>
+      <div class="integration-card" data-anim data-delay="3"><span class="icn">📧</span><h4>Outlook</h4><p>Calendar sync for earnings & events</p></div>
+      <div class="integration-card" data-anim data-delay="4"><span class="icn">🔗</span><h4>Zapier</h4><p>Automate any custom workflow</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 GLOBAL MARKETS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="split">
+      <div class="split-text" data-anim="left">
+        <span class="eyebrow">Global Reach</span>
+        <h2>180+ markets. One unified account.</h2>
+        <p>From Tokyo to London to São Paulo, STACKLY gives you direct access to the world's major exchanges with FX conversion at interbank rates.</p>
+        <ul class="ck-list">
+          <li>Direct market access in 26 currencies</li>
+          <li>Cross-listed ADRs and dual-listed equities</li>
+          <li>24/5 desk for after-hours and pre-market</li>
+          <li>Local tax reporting in 19 jurisdictions</li>
+        </ul>
+      </div>
+      <div class="split-img" data-anim="right">
+        <img src="./images/world.webp" alt="Global network" width="1400" height="800" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-anim>
+      <span class="eyebrow">Client Stories</span>
+      <h2>Trusted by traders and trusted by funds.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi" data-anim data-delay="1">
+        <p>The execution speed is unreal. Switched my entire options book over from a legacy broker — never looking back.</p>
+        <div class="testi-user"><div class="av">JM</div><div><b>James Morrison</b><span>Day Trader · NYC</span></div></div>
+      </div>
+      <div class="testi" data-anim data-delay="2">
+        <p>We onboarded our $400M fund in two weeks. The FIX integration was painless and the prime desk is responsive 24/5.</p>
+        <div class="testi-user"><div class="av">SK</div><div><b>Sara Khoury</b><span>CIO · Velocity Capital</span></div></div>
+      </div>
+      <div class="testi" data-anim data-delay="3">
+        <p>Finally a broker that doesn't gatekeep data behind paywalls. Level 2, news, screeners — all included.</p>
+        <div class="testi-user"><div class="av">DR</div><div><b>Devon Reyes</b><span>Independent Advisor</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW SECTION: Awards & Recognition -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head" data-anim>
+      <span class="eyebrow">Recognition</span>
+      <h2>Awards that reflect our commitment.</h2>
+    </div>
+    <div class="awards-grid">
+      <div class="award-card" data-anim data-delay="1"><span class="award-icon">🏆</span><h4>Best Execution</h4><p>Global Markets Awards</p><span class="year">2026</span></div>
+      <div class="award-card" data-anim data-delay="2"><span class="award-icon">⭐</span><h4>Top-Rated Mobile App</h4><p>Finance App Awards</p><span class="year">2026</span></div>
+      <div class="award-card" data-anim data-delay="3"><span class="award-icon">🔒</span><h4>Best Security</h4><p>Digital Trust Initiative</p><span class="year">2025</span></div>
+      <div class="award-card" data-anim data-delay="4"><span class="award-icon">📊</span><h4>Innovation in Trading</h4><p>FinTech Breakthrough</p><span class="year">2025</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-anim>
+      <span class="eyebrow">FAQ</span>
+      <h2>Answers, before you ask.</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item open"><div class="faq-q">How long does it take to open an account?<span class="plus">+</span></div><div class="faq-a"><div class="faq-a-inner">Most accounts are approved in under 4 minutes. ID verification and funding happen in-app, with same-day ACH credits.</div></div></div>
+      <div class="faq-item"><div class="faq-q">Are my assets insured?<span class="plus">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes — securities are SIPC-protected up to $500,000 and cash balances are FDIC-swept across partner banks for up to $2.5M coverage.</div></div></div>
+      <div class="faq-item"><div class="faq-q">Do you offer margin and options?<span class="plus">+</span></div><div class="faq-a"><div class="faq-a-inner">Active Trader and Institutional plans include Reg-T margin and tiered options approval up to Level 4 spreads.</div></div></div>
+      <div class="faq-item"><div class="faq-q">Can I trade pre- and post-market?<span class="plus">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes, 4:00 AM to 8:00 PM ET extended sessions are available at no extra cost on all paid plans.</div></div></div>
+      <div class="faq-item"><div class="faq-q">Is there an API for algorithmic trading?<span class="plus">+</span></div><div class="faq-a"><div class="faq-a-inner">REST and WebSocket APIs are free for all funded accounts. FIX 4.4 is available on Institutional plans.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band" data-anim="zoom">
+      <h2>Your edge starts with the right platform.</h2>
+      <p>Join 3.2 million traders who chose STACKLY for institutional-grade execution and brilliant tools.</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary">Open Free Account →</a>
+        <a href="about.html" class="btn btn-white">Why STACKLY</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <img src="./images/logo-dark.webp" alt="STACKLY" class="foot-logo"/>
+        <p>The professional stock exchange platform for the next generation of investors. Regulated by FINRA & SEC.</p>
+        <div class="socials">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+      <div><h4>Platform</h4><ul><li><a href="services.html">Trading Terminal</a></li><li><a href="services.html">Mobile App</a></li><li><a href="services.html">APIs</a></li><li><a href="services.html">Research</a></li></ul></div>
+      <div><h4>Markets</h4><ul><li><a href="services.html">US Equities</a></li><li><a href="services.html">Options</a></li><li><a href="services.html">Futures</a></li><li><a href="services.html">Crypto</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Insights</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html">Careers</a></li></ul></div>
+      <div><h4>Get the brief</h4><p style="margin-bottom:14px">Weekly market notes from our research desk.</p><form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Subscribed';"><input class="input" placeholder="you@example.com" type="email" required/><button class="btn btn-primary" type="submit">Subscribe</button></form></div>
+    </div>
+    <div class="copy">© 2026 STACKLY Financial, Inc. · All rights reserved · Securities offered through STACKLY Securities LLC, member FINRA/SIPC.</div>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+</body>
+</html>

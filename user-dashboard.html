@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>User Dashboard — STACKLY</title>
+<meta name="description" content="Your STACKLY portfolio, watchlists and orders."/>
+<link rel="icon" type="image/webp" href="./images/logo-dark.webp"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"/>
+<link rel="stylesheet" href="./css/styles.css"/>
+</head>
+<body>
+
+<div class="dash-side-overlay"></div>
+<div class="toast-container"></div>
+<div class="dash">
+
+  <!-- Sidebar -->
+  <aside class="dash-side">
+    <a class="brand" href="index.html">
+      <img src="./images/logo-dark.webp" alt="STACKLY"/>
+      <b>STACKLY</b>
+    </a>
+    <div class="dash-user">
+      <div class="av" id="dash-initial">S</div>
+      <div>
+        <b id="dash-username">Trader</b>
+        <span>User · Member</span>
+      </div>
+    </div>
+    <nav class="dash-nav">
+      <a class="active" data-tab="overview" href="#"><span class="ic">◐</span> Overview</a>
+      <a data-tab="portfolio" href="#"><span class="ic">◈</span> Portfolio <span class="badge">12</span></a>
+      <a data-tab="watchlist" href="#"><span class="ic">★</span> Watchlist <span class="badge">8</span></a>
+      <a data-tab="orders" href="#"><span class="ic">⇄</span> Orders</a>
+      <a data-tab="wallet" href="#"><span class="ic">▣</span> Wallet</a>
+      <a data-tab="research" href="#"><span class="ic">◇</span> Research</a>
+      <a data-tab="settings" href="#"><span class="ic">⚙</span> Settings</a>
+    </nav>
+    <div class="dash-foot">
+      <a id="dash-logout" href="login.html"><span>⎋</span> Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="dash-main">
+    <div class="dash-top">
+      <button class="dash-menu-btn" aria-label="Menu">☰</button>
+      <div class="crumbs">STACKLY · <b>Dashboard</b></div>
+      <div class="dash-search">
+        <input type="text" placeholder="Search symbols, news, orders…"/>
+        <div class="search-results"></div>
+      </div>
+      <div class="dash-top-actions">
+        <button class="icon-btn" aria-label="Notifications" onclick="showToast('New alert: AAPL target raised','info')">🔔<span class="ping"></span></button>
+        <button class="icon-btn" aria-label="Messages">✉</button>
+      </div>
+    </div>
+
+    <div class="dash-content">
+
+      <!-- ==================== TAB: OVERVIEW ==================== -->
+      <div id="tab-overview" class="dash-tab active" data-tab="overview" data-heading="Good day, <span style='color:var(--teal-400)' id='dash-username2'>Trader</span>">
+        <div class="dash-head" data-anim="left">
+          <h1>Good day, <span style="color:var(--teal-400)" id="dash-username2">Trader</span></h1>
+          <p>Here's how your portfolio is moving today.</p>
+        </div>
+
+        <!-- KPI cards -->
+        <div class="dash-grid cols-4" style="margin-bottom:22px">
+          <div class="stat-card" data-anim="zoom" data-delay="1">
+            <div class="lab"><span class="sicn">$</span> Portfolio value</div>
+            <div class="val">$<span data-count="184320" data-suffix="">0</span></div>
+            <div class="delta up">▲ +2.84% today</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="2">
+            <div class="lab"><span class="sicn">▲</span> Day P&amp;L</div>
+            <div class="val" style="color:#1c8d5d">+$<span data-count="5128" data-suffix="">0</span></div>
+            <div class="delta up">▲ Across 9 positions</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="3">
+            <div class="lab"><span class="sicn">▣</span> Buying power</div>
+            <div class="val">$<span data-count="42800" data-suffix="">0</span></div>
+            <div class="delta up">Settled cash</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="4">
+            <div class="lab"><span class="sicn">⇄</span> Open orders</div>
+            <div class="val"><span data-count="6" data-suffix="">0</span></div>
+            <div class="delta down">2 awaiting fill</div>
+          </div>
+        </div>
+
+        <!-- Chart + watchlist -->
+        <div class="dash-grid span-2-1" style="margin-bottom:22px">
+          <div class="panel chart-card" data-anim="left">
+            <div class="panel-head"><h3>Portfolio performance</h3><span class="pill">LIVE · NYSE</span></div>
+            <div class="chip-row">
+              <button class="chip">1D</button>
+              <button class="chip on">1W</button>
+              <button class="chip">1M</button>
+              <button class="chip">3M</button>
+              <button class="chip">YTD</button>
+              <button class="chip">ALL</button>
+            </div>
+            <img class="chart-img" src="./images/chart1.webp" alt="Portfolio chart"/>
+          </div>
+          <div class="panel" data-anim="right">
+            <div class="panel-head"><h3>Watchlist</h3><span class="pill">8 symbols</span></div>
+            <div class="dash-list">
+              <div class="row"><div class="av-sm">AA</div><div class="who"><b>AAPL</b><span>Apple Inc.</span></div><div class="val">232.84<span class="sub" style="color:#1c8d5d">+1.42%</span></div></div>
+              <div class="row"><div class="av-sm">MS</div><div class="who"><b>MSFT</b><span>Microsoft</span></div><div class="val">448.12<span class="sub" style="color:#1c8d5d">+0.84%</span></div></div>
+              <div class="row"><div class="av-sm">NV</div><div class="who"><b>NVDA</b><span>NVIDIA</span></div><div class="val">138.27<span class="sub" style="color:#1c8d5d">+2.31%</span></div></div>
+              <div class="row"><div class="av-sm">TS</div><div class="who"><b>TSLA</b><span>Tesla</span></div><div class="val">244.50<span class="sub" style="color:#c14242">-0.62%</span></div></div>
+              <div class="row"><div class="av-sm">GO</div><div class="who"><b>GOOG</b><span>Alphabet</span></div><div class="val">172.91<span class="sub" style="color:#1c8d5d">+0.41%</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Holdings + News -->
+        <div class="dash-grid span-2-1" style="margin-bottom:22px">
+          <div class="panel" data-anim="zoom">
+            <div class="panel-head"><h3>Top holdings</h3><a href="#" class="pill">View all →</a></div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead><tr><th>Symbol</th><th>Qty</th><th>Avg cost</th><th>Market</th><th>P&amp;L</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td><b>AAPL</b></td><td>120</td><td>$184.20</td><td>$232.84</td><td style="color:#1c8d5d">+$5,837</td><td><span class="pill pill-ok">Open</span></td></tr>
+                  <tr><td><b>MSFT</b></td><td>60</td><td>$398.50</td><td>$448.12</td><td style="color:#1c8d5d">+$2,977</td><td><span class="pill pill-ok">Open</span></td></tr>
+                  <tr><td><b>NVDA</b></td><td>200</td><td>$112.10</td><td>$138.27</td><td style="color:#1c8d5d">+$5,234</td><td><span class="pill pill-ok">Open</span></td></tr>
+                  <tr><td><b>TSLA</b></td><td>40</td><td>$260.00</td><td>$244.50</td><td style="color:#c14242">-$620</td><td><span class="pill pill-warn">Watch</span></td></tr>
+                  <tr><td><b>GOOG</b></td><td>80</td><td>$165.40</td><td>$172.91</td><td style="color:#1c8d5d">+$600</td><td><span class="pill pill-ok">Open</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel" data-anim="right">
+            <div class="panel-head"><h3>Market briefing</h3></div>
+            <img class="dash-img" src="./images/bull.webp" alt="Markets" style="height:140px;object-fit:cover;margin-bottom:14px"/>
+            <div class="dash-list">
+              <div class="row"><div class="av-sm">N</div><div class="who"><b>Fed minutes lift tech</b><span>4 min ago · Reuters</span></div></div>
+              <div class="row"><div class="av-sm">N</div><div class="who"><b>Oil holds gains on supply</b><span>22 min ago · Bloomberg</span></div></div>
+              <div class="row"><div class="av-sm">N</div><div class="who"><b>NVDA upgraded to Buy</b><span>1 h ago · J.P. Morgan</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner -->
+        <div class="dash-banner" data-anim="zoom">
+          <div><h4>Upgrade to STACKLY Pro</h4><p>Unlock advanced charting, options chains, and a personal portfolio advisor.</p></div>
+          <a href="#" class="btn btn-white">Explore Pro →</a>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: PORTFOLIO ==================== -->
+      <div id="tab-portfolio" class="dash-tab" data-tab="portfolio" data-heading="Your Portfolio">
+        <div class="dash-head" data-anim="left"><h1>Your Portfolio</h1><p>Detailed breakdown of your holdings and allocation.</p></div>
+        <div class="dash-grid cols-4" style="margin-bottom:22px">
+          <div class="stat-card"><div class="lab"><span class="sicn">$</span> Total Value</div><div class="val">$184,320</div><div class="delta up">▲ +2.84%</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">▲</span> Total Return</div><div class="val" style="color:#1c8d5d">+$14,028</div><div class="delta up">▲ +8.24% all time</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">◈</span> Positions</div><div class="val">12</div><div class="delta up">9 profitable</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">📊</span> Diversification</div><div class="val">6 sectors</div><div class="delta up">Well diversified</div></div>
+        </div>
+        <div class="dash-grid span-2-1" style="margin-bottom:22px">
+          <div class="panel">
+            <div class="panel-head"><h3>Holdings</h3></div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead><tr><th>Symbol</th><th>Shares</th><th>Avg Cost</th><th>Current</th><th>Day P&amp;L</th><th>Total P&amp;L</th><th>Alloc</th></tr></thead>
+                <tbody>
+                  <tr><td><b>AAPL</b></td><td>120</td><td>$184.20</td><td>$232.84</td><td style="color:#1c8d5d">+$38.40</td><td style="color:#1c8d5d">+$5,836.80</td><td>15.2%</td></tr>
+                  <tr><td><b>MSFT</b></td><td>60</td><td>$398.50</td><td>$448.12</td><td style="color:#1c8d5d">+$22.80</td><td style="color:#1c8d5d">+$2,977.20</td><td>14.6%</td></tr>
+                  <tr><td><b>NVDA</b></td><td>200</td><td>$112.10</td><td>$138.27</td><td style="color:#1c8d5d">+$41.20</td><td style="color:#1c8d5d">+$5,234.00</td><td>15.0%</td></tr>
+                  <tr><td><b>TSLA</b></td><td>40</td><td>$260.00</td><td>$244.50</td><td style="color:#c14242">-$18.00</td><td style="color:#c14242">-$620.00</td><td>5.3%</td></tr>
+                  <tr><td><b>GOOG</b></td><td>80</td><td>$165.40</td><td>$172.91</td><td style="color:#1c8d5d">+$11.20</td><td style="color:#1c8d5d">+$600.80</td><td>7.5%</td></tr>
+                  <tr><td><b>AMZN</b></td><td>50</td><td>$178.20</td><td>$198.35</td><td style="color:#1c8d5d">+$15.50</td><td style="color:#1c8d5d">+$1,007.50</td><td>5.4%</td></tr>
+                  <tr><td><b>JPM</b></td><td>30</td><td>$185.60</td><td>$198.76</td><td style="color:#1c8d5d">+$8.40</td><td style="color:#1c8d5d">+$394.80</td><td>3.2%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Asset Allocation</h3></div>
+            <div class="alloc-bar">
+              <div class="seg" style="width:25%;background:linear-gradient(90deg,#5fb6ad,#13243d)"></div>
+              <div class="seg" style="width:20%;background:linear-gradient(90deg,#13243d,#4ad29b)"></div>
+              <div class="seg" style="width:18%;background:linear-gradient(90deg,#4ad29b,#c9a84c)"></div>
+              <div class="seg" style="width:15%;background:linear-gradient(90deg,#c9a84c,#5fb6ad)"></div>
+              <div class="seg" style="width:12%;background:linear-gradient(90deg,#5fb6ad,#c14242)"></div>
+              <div class="seg" style="width:10%;background:linear-gradient(90deg,#c14242,#13243d)"></div>
+            </div>
+            <div class="alloc-legend">
+              <span class="item"><span class="dot" style="background:#13243d"></span> Tech 25%</span>
+              <span class="item"><span class="dot" style="background:#4ad29b"></span> Finance 20%</span>
+              <span class="item"><span class="dot" style="background:#c9a84c"></span> Health 18%</span>
+              <span class="item"><span class="dot" style="background:#5fb6ad"></span> Energy 15%</span>
+              <span class="item"><span class="dot" style="background:#c14242"></span> Consumer 12%</span>
+              <span class="item"><span class="dot" style="background:#6b7c93"></span> Cash 10%</span>
+            </div>
+            <div style="margin-top:20px">
+              <h4 style="font-family:var(--font-display);color:var(--navy-900);font-size:.95rem;margin-bottom:12px">Recent Activity</h4>
+              <div class="activity-feed">
+                <div class="activity-item"><div class="act-icon">+</div><div class="act-body"><b>Bought 120 AAPL</b><span>Limit order filled at $184.20</span></div><span class="act-time">2d ago</span></div>
+                <div class="activity-item"><div class="act-icon">+</div><div class="act-body"><b>Bought 60 MSFT</b><span>Market order filled at $398.50</span></div><span class="act-time">5d ago</span></div>
+                <div class="activity-item"><div class="act-icon">-</div><div class="act-body"><b>Sold 50 NFLX</b><span>Limit order at $624.80</span></div><span class="act-time">1w ago</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: WATCHLIST ==================== -->
+      <div id="tab-watchlist" class="dash-tab" data-tab="watchlist" data-heading="Your Watchlist">
+        <div class="dash-head" data-anim="left"><h1>Your Watchlist</h1><p>Track your favorite symbols in real time.</p></div>
+        <div class="panel" data-anim="zoom">
+          <div class="panel-head"><h3>Watchlist</h3><span class="pill">8 symbols · LIVE</span></div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead><tr><th>Symbol</th><th>Name</th><th>Price</th><th>Change</th><th>Volume</th><th>Market Cap</th></tr></thead>
+              <tbody>
+                <tr><td><b>AAPL</b></td><td>Apple Inc.</td><td class="tk-price" data-ticker="232.84">232.84</td><td class="tk-chg up">+0.00%</td><td>52.4M</td><td>$3.52T</td></tr>
+                <tr><td><b>MSFT</b></td><td>Microsoft Corp.</td><td class="tk-price" data-ticker="448.12">448.12</td><td class="tk-chg up">+0.00%</td><td>18.2M</td><td>$3.18T</td></tr>
+                <tr><td><b>NVDA</b></td><td>NVIDIA Corp.</td><td class="tk-price" data-ticker="138.27">138.27</td><td class="tk-chg up">+0.00%</td><td>280.6M</td><td>$3.41T</td></tr>
+                <tr><td><b>TSLA</b></td><td>Tesla Inc.</td><td class="tk-price" data-ticker="244.50">244.50</td><td class="tk-chg up">+0.00%</td><td>85.3M</td><td>$781B</td></tr>
+                <tr><td><b>GOOG</b></td><td>Alphabet Inc.</td><td class="tk-price" data-ticker="172.91">172.91</td><td class="tk-chg up">+0.00%</td><td>22.8M</td><td>$2.12T</td></tr>
+                <tr><td><b>AMZN</b></td><td>Amazon.com Inc.</td><td class="tk-price" data-ticker="198.35">198.35</td><td class="tk-chg up">+0.00%</td><td>40.1M</td><td>$2.05T</td></tr>
+                <tr><td><b>META</b></td><td>Meta Platforms</td><td class="tk-price" data-ticker="512.40">512.40</td><td class="tk-chg up">+0.00%</td><td>14.6M</td><td>$1.29T</td></tr>
+                <tr><td><b>AMD</b></td><td>Advanced Micro Devices</td><td class="tk-price" data-ticker="162.88">162.88</td><td class="tk-chg up">+0.00%</td><td>58.2M</td><td>$263B</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: ORDERS ==================== -->
+      <div id="tab-orders" class="dash-tab" data-tab="orders" data-heading="Orders & Trading">
+        <div class="dash-head" data-anim="left"><h1>Orders & Trading</h1><p>Place orders and track your trade history.</p></div>
+        <div class="dash-grid span-2-1" style="margin-bottom:22px">
+          <div class="panel" data-anim="left">
+            <div class="panel-head"><h3>Place Order</h3><span class="pill">NYSE · MARKET HOURS</span></div>
+            <div class="order-tabs">
+              <button class="order-tab on">Buy</button>
+              <button class="order-tab">Sell</button>
+            </div>
+            <div class="order-form-grid">
+              <div class="field"><label>Symbol</label><input class="input" placeholder="e.g. AAPL" value="AAPL"/></div>
+              <div class="field"><label>Order Type</label><select class="select"><option>Market</option><option>Limit</option><option>Stop</option><option>Stop Limit</option></select></div>
+              <div class="field"><label>Quantity</label><input class="input" type="number" value="10" min="1"/></div>
+              <div class="field"><label>Price (for Limit)</label><input class="input" placeholder="Market price" disabled/></div>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:16px">
+              <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="showToast('Order placed successfully!','success')">Place Order</button>
+              <button class="btn btn-ghost" style="flex:1;justify-content:center">Preview</button>
+            </div>
+          </div>
+          <div class="panel" data-anim="right">
+            <div class="panel-head"><h3>Open Orders</h3><span class="pill">6 pending</span></div>
+            <div class="dash-list">
+              <div class="row"><div class="av-sm">B</div><div class="who"><b>Buy AAPL</b><span>Limit · 50 @ $228.00</span></div><div class="val"><span class="pill pill-warn">Open</span></div></div>
+              <div class="row"><div class="av-sm">S</div><div class="who"><b>Sell TSLA</b><span>Stop · 20 @ $250.00</span></div><div class="val"><span class="pill pill-warn">Open</span></div></div>
+              <div class="row"><div class="av-sm">B</div><div class="who"><b>Buy NVDA</b><span>Market · 25 shares</span></div><div class="val"><span class="pill pill-info">Filled</span></div></div>
+              <div class="row"><div class="av-sm">S</div><div class="who"><b>Sell GOOG</b><span>Limit · 10 @ $175.00</span></div><div class="val"><span class="pill pill-ok">Filled</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel" data-anim="zoom">
+          <div class="panel-head"><h3>Order History</h3><a href="#" class="pill">Export →</a></div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead><tr><th>Date</th><th>Type</th><th>Symbol</th><th>Side</th><th>Qty</th><th>Price</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Jun 22</td><td>Market</td><td>AAPL</td><td style="color:#1c8d5d">Buy</td><td>50</td><td>$232.84</td><td><span class="pill pill-ok">Filled</span></td></tr>
+                <tr><td>Jun 21</td><td>Limit</td><td>NVDA</td><td style="color:#1c8d5d">Buy</td><td>25</td><td>$136.00</td><td><span class="pill pill-ok">Filled</span></td></tr>
+                <tr><td>Jun 20</td><td>Stop</td><td>TSLA</td><td style="color:#c14242">Sell</td><td>10</td><td>$250.00</td><td><span class="pill pill-warn">Pending</span></td></tr>
+                <tr><td>Jun 18</td><td>Market</td><td>MSFT</td><td style="color:#1c8d5d">Buy</td><td>30</td><td>$448.12</td><td><span class="pill pill-ok">Filled</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: WALLET ==================== -->
+      <div id="tab-wallet" class="dash-tab" data-tab="wallet" data-heading="Wallet & Funds">
+        <div class="dash-head" data-anim="left"><h1>Wallet & Funds</h1><p>Manage your deposits, withdrawals, and account balance.</p></div>
+        <div class="dash-grid cols-3" style="margin-bottom:22px">
+          <div class="wallet-balance" data-anim="zoom" data-delay="1">
+            <div class="label">Total Balance</div>
+            <div class="amount">$184,320.44</div>
+            <div class="sub">Available for trading: $42,800.00</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="2">
+            <div class="lab"><span class="sicn">$</span> Cash Balance</div>
+            <div class="val">$42,800</div>
+            <div class="delta up">▲ +$2,400 this month</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="3">
+            <div class="lab"><span class="sicn">⇄</span> Margin Available</div>
+            <div class="val">$28,400</div>
+            <div class="delta up">9.50% APR</div>
+          </div>
+        </div>
+        <div class="dash-grid span-2-1" style="margin-bottom:22px">
+          <div class="panel" data-anim="left">
+            <div class="panel-head"><h3>Transaction History</h3></div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead><tr><th>Date</th><th>Type</th><th>Amount</th><th>Method</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Jun 20</td><td>Deposit</td><td style="color:#1c8d5d">+$5,000.00</td><td>ACH Transfer</td><td><span class="pill pill-ok">Completed</span></td></tr>
+                  <tr><td>Jun 15</td><td>Deposit</td><td style="color:#1c8d5d">+$10,000.00</td><td>Wire Transfer</td><td><span class="pill pill-ok">Completed</span></td></tr>
+                  <tr><td>Jun 10</td><td>Withdrawal</td><td style="color:#c14242">-$2,500.00</td><td>ACH Transfer</td><td><span class="pill pill-ok">Completed</span></td></tr>
+                  <tr><td>Jun 01</td><td>Deposit</td><td style="color:#1c8d5d">+$25,000.00</td><td>Wire Transfer</td><td><span class="pill pill-ok">Completed</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel" data-anim="right">
+            <div class="panel-head"><h3>Quick Actions</h3></div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <button class="btn btn-primary" onclick="showToast('Deposit initiated. Funds will arrive in 1-2 business days.','success')" style="justify-content:center">Deposit Funds</button>
+              <button class="btn btn-ghost" onclick="showToast('Withdrawal request submitted.','info')" style="justify-content:center">Withdraw Funds</button>
+              <button class="btn btn-ghost" style="justify-content:center">Transfer Between Accounts</button>
+              <button class="btn btn-ghost" style="justify-content:center">View Statements</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: RESEARCH ==================== -->
+      <div id="tab-research" class="dash-tab" data-tab="research" data-heading="Research & Insights">
+        <div class="dash-head" data-anim="left"><h1>Research & Insights</h1><p>Curated research, market analysis, and earnings coverage.</p></div>
+        <div class="dash-grid cols-3" style="margin-bottom:22px">
+          <div class="stat-card" data-anim="zoom" data-delay="1">
+            <div class="lab"><span class="sicn">📄</span> Reports Published</div><div class="val">1,847</div><div class="delta up">▲ +12 this week</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="2">
+            <div class="lab"><span class="sicn">📊</span> Companies Covered</div><div class="val">1,800+</div><div class="delta up">96% accuracy rate</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="3">
+            <div class="lab"><span class="sicn">👁</span> Active Readers</div><div class="val">180K</div><div class="delta up">▲ +4.2% w/w</div>
+          </div>
+        </div>
+        <div class="dash-grid span-2-1" style="margin-bottom:22px">
+          <div class="panel" data-anim="left">
+            <div class="panel-head"><h3>Latest Research</h3></div>
+            <div class="dash-list">
+              <div class="row"><div class="av-sm">MR</div><div class="who"><b>The 2026 Industrial Outlook</b><span>Sara Khoury · 12 min read</span></div><span class="pill pill-info">Featured</span></div>
+              <div class="row"><div class="av-sm">EC</div><div class="who"><b>Earnings Preview: Tech Giants Q2</b><span>Maya Chen · 8 min read</span></div><span class="pill pill-ok">New</span></div>
+              <div class="row"><div class="av-sm">QT</div><div class="who"><b>Quant Signals: Factor Rotation</b><span>Research Desk · Weekly</span></div><span class="pill pill-info">Updated</span></div>
+              <div class="row"><div class="av-sm">MC</div><div class="who"><b>Macro Commentary: Fed Watch</b><span>James Morrison · 6 min read</span></div><span class="pill pill-ok">New</span></div>
+            </div>
+          </div>
+          <div class="panel" data-anim="right">
+            <div class="panel-head"><h3>AI Research Co-Pilot</h3></div>
+            <img class="dash-img" src="./images/analyst.webp" alt="Research" style="height:140px;object-fit:cover;margin-bottom:14px"/>
+            <p style="color:var(--muted);font-size:.9rem;margin-bottom:14px">Ask natural-language questions about any stock, sector, or market trend.</p>
+            <div style="position:relative">
+              <input class="input" placeholder="e.g. Show me AI stocks with P/E < 25" style="padding-right:50px"/>
+              <button style="position:absolute;right:4px;top:4px;bottom:4px;width:40px;border-radius:10px;background:linear-gradient(135deg,var(--navy-800),var(--teal-400));color:#fff;border:none;cursor:pointer" onclick="showToast('Analyzing market data...','info')">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: SETTINGS ==================== -->
+      <div id="tab-settings" class="dash-tab" data-tab="settings" data-heading="Account Settings">
+        <div class="dash-head" data-anim="left"><h1>Account Settings</h1><p>Manage your profile, preferences, and security.</p></div>
+        <div class="dash-grid span-2-1">
+          <div class="panel" data-anim="left">
+            <div class="settings-section">
+              <h3>Profile</h3>
+              <div class="field"><label>Display Name</label><input class="input" value="Trader" placeholder="Your display name"/></div>
+              <div class="field"><label>Email</label><input class="input" value="trader@stackly.com" type="email"/></div>
+              <button class="btn btn-primary btn-sm" onclick="showToast('Profile updated successfully!','success')">Save Changes</button>
+            </div>
+            <div class="settings-section">
+              <h3>Preferences</h3>
+              <div class="toggle-row"><div class="info"><b>Dark Mode</b><span>Use dark theme across the platform</span></div><div class="toggle-switch on"></div></div>
+              <div class="toggle-row"><div class="info"><b>Email Notifications</b><span>Trade confirmations and alerts</span></div><div class="toggle-switch on"></div></div>
+              <div class="toggle-row"><div class="info"><b>Push Notifications</b><span>Price alerts and market events</span></div><div class="toggle-switch"></div></div>
+              <div class="toggle-row"><div class="info"><b>Two-Factor Auth</b><span>Extra security for your account</span></div><div class="toggle-switch on"></div></div>
+            </div>
+          </div>
+          <div class="panel" data-anim="right">
+            <div class="settings-section">
+              <h3>Security</h3>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <button class="btn btn-ghost btn-sm" style="justify-content:center" onclick="showToast('Password reset link sent to your email.','info')">Change Password</button>
+                <button class="btn btn-ghost btn-sm" style="justify-content:center" onclick="showToast('API key generated. Store it securely.','info')">Generate API Key</button>
+                <button class="btn btn-ghost btn-sm" style="justify-content:center">View Login History</button>
+                <div style="margin-top:12px;padding:14px;background:rgba(243,112,112,.08);border-radius:var(--r-sm);text-align:center">
+                  <b style="color:#c14242;font-size:.9rem">Danger Zone</b>
+                  <button class="btn btn-ghost btn-sm" style="margin-top:10px;width:100%;justify-content:center;border-color:#c14242;color:#c14242" onclick="showToast('Account deletion request submitted.','error')">Delete Account</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Admin Console — STACKLY</title>
+<meta name="description" content="STACKLY admin operations, users, compliance and revenue."/>
+<link rel="icon" type="image/webp" href="./images/logo-dark.webp"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"/>
+<link rel="stylesheet" href="./css/styles.css"/>
+</head>
+<body>
+
+<div class="dash-side-overlay"></div>
+<div class="toast-container"></div>
+<div class="dash">
+
+  <!-- Sidebar -->
+  <aside class="dash-side">
+    <a class="brand" href="index.html">
+      <img src="./images/logo-dark.webp" alt="STACKLY"/>
+      <b>STACKLY</b>
+    </a>
+    <div class="dash-user">
+      <div class="av" id="dash-initial">A</div>
+      <div>
+        <b id="dash-username">Admin</b>
+        <span>Admin · Operations</span>
+      </div>
+    </div>
+    <nav class="dash-nav">
+      <a class="active" data-tab="overview" href="#"><span class="ic">◐</span> Overview</a>
+      <a data-tab="users" href="#"><span class="ic">◉</span> Users <span class="badge">2.4k</span></a>
+      <a data-tab="listings" href="#"><span class="ic">▣</span> Listings</a>
+      <a data-tab="compliance" href="#"><span class="ic">⚖</span> Compliance <span class="badge">3</span></a>
+      <a data-tab="revenue" href="#"><span class="ic">$</span> Revenue</a>
+      <a data-tab="reports" href="#"><span class="ic">◇</span> Reports</a>
+      <a data-tab="settings" href="#"><span class="ic">⚙</span> Settings</a>
+    </nav>
+    <div class="dash-foot">
+      <a id="dash-logout" href="login.html"><span>⎋</span> Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="dash-main">
+    <div class="dash-top">
+      <button class="dash-menu-btn" aria-label="Menu">☰</button>
+      <div class="crumbs">STACKLY · <b>Admin Console</b></div>
+      <div class="dash-search">
+        <input type="text" placeholder="Search users, tickets, listings…"/>
+        <div class="search-results"></div>
+      </div>
+      <div class="dash-top-actions">
+        <button class="icon-btn" aria-label="Alerts" onclick="showToast('3 compliance flags require attention','error')">⚠<span class="ping"></span></button>
+        <button class="icon-btn" aria-label="Messages">✉</button>
+      </div>
+    </div>
+
+    <div class="dash-content">
+
+      <!-- ==================== TAB: OVERVIEW ==================== -->
+      <div id="tab-overview" class="dash-tab active" data-tab="overview" data-heading="Operations overview">
+        <div class="dash-head" data-anim="left">
+          <h1>Operations overview</h1>
+          <p>Platform health, user growth and compliance signals — all in one place.</p>
+        </div>
+
+        <!-- KPI cards -->
+        <div class="dash-grid cols-4" style="margin-bottom:22px">
+          <div class="stat-card" data-anim="zoom" data-delay="1">
+            <div class="lab"><span class="sicn">◉</span> Active users</div>
+            <div class="val"><span data-count="24820" data-suffix="">0</span></div>
+            <div class="delta up">▲ +312 today</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="2">
+            <div class="lab"><span class="sicn">$</span> 24h volume</div>
+            <div class="val">$<span data-count="184" data-suffix="M">0</span></div>
+            <div class="delta up">▲ +8.4% w/w</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="3">
+            <div class="lab"><span class="sicn">⚖</span> Open tickets</div>
+            <div class="val"><span data-count="42" data-suffix="">0</span></div>
+            <div class="delta down">▼ −6 since morning</div>
+          </div>
+          <div class="stat-card" data-anim="zoom" data-delay="4">
+            <div class="lab"><span class="sicn">⚡</span> Platform uptime</div>
+            <div class="val"><span data-count="99.99" data-suffix="%">0</span></div>
+            <div class="delta up">All systems normal</div>
+          </div>
+        </div>
+
+        <!-- Map + Compliance -->
+        <div class="dash-grid span-2-1" style="margin-bottom:22px">
+          <div class="panel chart-card" data-anim="left">
+            <div class="panel-head"><h3>Global activity</h3><span class="pill">180 markets</span></div>
+            <div class="chip-row">
+              <button class="chip on">Volume</button>
+              <button class="chip">Signups</button>
+              <button class="chip">Alerts</button>
+            </div>
+            <img class="chart-img" src="./images/world.webp" alt="Global activity"/>
+          </div>
+          <div class="panel" data-anim="right">
+            <div class="panel-head"><h3>Compliance queue</h3><span class="pill pill-warn">3 urgent</span></div>
+            <div class="dash-list">
+              <div class="row"><div class="av-sm">KY</div><div class="who"><b>KYC review · CU-58210</b><span>Tier 3 · 12 min ago</span></div><span class="pill pill-warn">Urgent</span></div>
+              <div class="row"><div class="av-sm">AM</div><div class="who"><b>AML flag · ORD-8821</b><span>$245k transfer</span></div><span class="pill pill-err">High</span></div>
+              <div class="row"><div class="av-sm">DR</div><div class="who"><b>Document expiry</b><span>4 customers</span></div><span class="pill pill-info">Info</span></div>
+              <div class="row"><div class="av-sm">SR</div><div class="who"><b>Sanctions rescan</b><span>Quarterly · scheduled</span></div><span class="pill pill-ok">OK</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Users table + analyst -->
+        <div class="dash-grid span-2-1" style="margin-bottom:22px">
+          <div class="panel" data-anim="zoom">
+            <div class="panel-head"><h3>Recent users</h3><a href="#" class="pill">Manage →</a></div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead><tr><th>User</th><th>Plan</th><th>Region</th><th>Joined</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td><b>e.morris@…</b></td><td>Pro</td><td>US · NYC</td><td>Today</td><td><span class="pill pill-ok">Verified</span></td></tr>
+                  <tr><td><b>k.tanaka@…</b></td><td>Standard</td><td>JP · Tokyo</td><td>Today</td><td><span class="pill pill-warn">Pending KYC</span></td></tr>
+                  <tr><td><b>l.silva@…</b></td><td>Pro</td><td>BR · São Paulo</td><td>Yesterday</td><td><span class="pill pill-ok">Verified</span></td></tr>
+                  <tr><td><b>j.dubois@…</b></td><td>Standard</td><td>FR · Paris</td><td>Yesterday</td><td><span class="pill pill-err">Blocked</span></td></tr>
+                  <tr><td><b>r.patel@…</b></td><td>Institutional</td><td>UK · London</td><td>2 d ago</td><td><span class="pill pill-ok">Verified</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel" data-anim="right">
+            <div class="panel-head"><h3>Lead analyst</h3></div>
+            <img class="dash-img" src="./images/analyst.webp" alt="Analyst" style="height:160px;object-fit:cover;margin-bottom:14px"/>
+            <b style="font-family:var(--font-display);color:var(--navy-900);font-size:1.05rem">Sarah Mitchell</b>
+            <p style="color:var(--muted);font-size:.9rem;margin-top:4px">Coverage: US equities, semiconductors, AI infra. 12 reports this quarter.</p>
+            <div style="margin-top:14px;display:flex;gap:8px">
+              <a href="#" class="btn btn-primary btn-sm">View desk →</a>
+              <a href="#" class="btn btn-ghost btn-sm">Schedule</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revenue banner -->
+        <div class="dash-banner" data-anim="zoom">
+          <div><h4>Monthly revenue report ready</h4><p>$3.84M in trading fees · 24% YoY growth. Download the full investor pack.</p></div>
+          <a href="#" class="btn btn-white">Download report →</a>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: USERS ==================== -->
+      <div id="tab-users" class="dash-tab" data-tab="users" data-heading="User Management">
+        <div class="dash-head" data-anim="left"><h1>User Management</h1><p>Manage all platform users, their accounts, and activity.</p></div>
+        <div class="dash-grid cols-4" style="margin-bottom:22px">
+          <div class="stat-card"><div class="lab"><span class="sicn">◉</span> Total Users</div><div class="val">24,820</div><div class="delta up">▲ +312 today</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">✓</span> Verified</div><div class="val">22,144</div><div class="delta up">89.2% rate</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">⏳</span> Pending KYC</div><div class="val">1,284</div><div class="delta down">▼ Needs review</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">🚫</span> Blocked</div><div class="val">142</div><div class="delta down">▼ -12 this week</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>All Users</h3><div style="display:flex;gap:8px"><input class="input" placeholder="Search users…" style="width:280px;padding:8px 14px"/><button class="btn btn-primary btn-sm">Search</button></div></div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead><tr><th>Email</th><th>Plan</th><th>Region</th><th>Joined</th><th>Volume</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td><b>e.morris@example.com</b></td><td>Pro</td><td>US · NYC</td><td>Jun 22</td><td>$284K</td><td><span class="pill pill-ok">Verified</span></td><td><a href="#" class="pill">View</a></td></tr>
+                <tr><td><b>k.tanaka@example.com</b></td><td>Standard</td><td>JP · Tokyo</td><td>Jun 22</td><td>$12K</td><td><span class="pill pill-warn">Pending KYC</span></td><td><a href="#" class="pill">Review</a></td></tr>
+                <tr><td><b>l.silva@example.com</b></td><td>Pro</td><td>BR · SP</td><td>Jun 21</td><td>$89K</td><td><span class="pill pill-ok">Verified</span></td><td><a href="#" class="pill">View</a></td></tr>
+                <tr><td><b>j.dubois@example.com</b></td><td>Standard</td><td>FR · Paris</td><td>Jun 21</td><td>$2K</td><td><span class="pill pill-err">Blocked</span></td><td><a href="#" class="pill">Review</a></td></tr>
+                <tr><td><b>r.patel@example.com</b></td><td>Institutional</td><td>UK · London</td><td>Jun 20</td><td>$1.2M</td><td><span class="pill pill-ok">Verified</span></td><td><a href="#" class="pill">View</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: LISTINGS ==================== -->
+      <div id="tab-listings" class="dash-tab" data-tab="listings" data-heading="Market Listings">
+        <div class="dash-head" data-anim="left"><h1>Market Listings</h1><p>Manage securities listed on the STACKLY exchange.</p></div>
+        <div class="dash-grid cols-3" style="margin-bottom:22px">
+          <div class="stat-card"><div class="lab"><span class="sicn">📊</span> Total Listings</div><div class="val">12,480</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">🏢</span> Equities</div><div class="val">8,240</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">🎯</span> ETFs & Funds</div><div class="val">4,240</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Recent Listings</h3><span class="pill">24 added this week</span></div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead><tr><th>Symbol</th><th>Name</th><th>Type</th><th>Exchange</th><th>Listed</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><b>QUANT</b></td><td>Quantum Computing Inc.</td><td>Equity</td><td>NASDAQ</td><td>Jun 20</td><td><span class="pill pill-ok">Active</span></td></tr>
+                <tr><td><b>GREEN</b></td><td>Green Energy Fund</td><td>ETF</td><td>NYSE</td><td>Jun 18</td><td><span class="pill pill-ok">Active</span></td></tr>
+                <tr><td><b>AIINF</b></td><td>AI Infrastructure ETF</td><td>ETF</td><td>NYSE</td><td>Jun 15</td><td><span class="pill pill-ok">Active</span></td></tr>
+                <tr><td><b>BIOME</b></td><td>BioMe Therapeutics</td><td>Equity</td><td>NASDAQ</td><td>Jun 12</td><td><span class="pill pill-warn">Pending</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: COMPLIANCE ==================== -->
+      <div id="tab-compliance" class="dash-tab" data-tab="compliance" data-heading="Compliance Center">
+        <div class="dash-head" data-anim="left"><h1>Compliance Center</h1><p>Monitor regulatory compliance, flag reviews, and audit trails.</p></div>
+        <div class="dash-grid cols-4" style="margin-bottom:22px">
+          <div class="stat-card"><div class="lab"><span class="sicn">⚖</span> Open Cases</div><div class="val">42</div><div class="delta down">▼ 3 urgent</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">✓</span> Cleared Today</div><div class="val">18</div><div class="delta up">▲ On track</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">⏳</span> Avg Resolution</div><div class="val">4.2h</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">🔍</span> Audits Passed</div><div class="val">100%</div><div class="delta up">SOC 2 Type II</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Active Reviews</h3></div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead><tr><th>Case ID</th><th>Type</th><th>User</th><th>Trigger</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td><b>CU-58210</b></td><td>KYC</td><td>k.tanaka@…</td><td>Tier 3 verification</td><td><span class="pill pill-warn">Urgent</span></td><td><a href="#" class="pill">Review</a></td></tr>
+                <tr><td><b>ORD-8821</b></td><td>AML</td><td>j.mitchell@…</td><td>$245K transfer</td><td><span class="pill pill-err">High</span></td><td><a href="#" class="pill">Review</a></td></tr>
+                <tr><td><b>DOC-4410</b></td><td>Document</td><td>4 customers</td><td>ID expiry</td><td><span class="pill pill-info">Info</span></td><td><a href="#" class="pill">Notify</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: REVENUE ==================== -->
+      <div id="tab-revenue" class="dash-tab" data-tab="revenue" data-heading="Revenue Dashboard">
+        <div class="dash-head" data-anim="left"><h1>Revenue Dashboard</h1><p>Trading fees, subscription revenue, and growth metrics.</p></div>
+        <div class="dash-grid cols-4" style="margin-bottom:22px">
+          <div class="stat-card"><div class="lab"><span class="sicn">$</span> Monthly Revenue</div><div class="val">$3.84M</div><div class="delta up">▲ +24% YoY</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">📈</span> Trading Fees</div><div class="val">$2.91M</div><div class="delta up">▲ 75.8% of total</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">👥</span> Subscriptions</div><div class="val">$0.93M</div><div class="delta up">▲ 24.2% of total</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">📊</span> ARPU</div><div class="val">$154</div><div class="delta up">▲ +$12 vs last Q</div></div>
+        </div>
+        <div class="dash-grid span-2-1">
+          <div class="panel"><div class="panel-head"><h3>Revenue Breakdown</h3></div>
+            <table class="dash-table">
+              <thead><tr><th>Category</th><th>Amount</th><th>Growth</th><th>% of Total</th></tr></thead>
+              <tbody>
+                <tr><td>Equity Trading Fees</td><td>$1.84M</td><td style="color:#1c8d5d">+18%</td><td>48%</td></tr>
+                <tr><td>Options & Derivatives</td><td>$0.67M</td><td style="color:#1c8d5d">+32%</td><td>17%</td></tr>
+                <tr><td>Crypto Trading</td><td>$0.40M</td><td style="color:#1c8d5d">+42%</td><td>10%</td></tr>
+                <tr><td>Pro Subscriptions</td><td>$0.58M</td><td style="color:#1c8d5d">+22%</td><td>15%</td></tr>
+                <tr><td>Institutional Services</td><td>$0.35M</td><td style="color:#1c8d5d">+15%</td><td>9%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Quick Stats</h3></div>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div><b style="color:var(--navy-900)">Avg. daily revenue</b><div style="font-family:var(--font-display);font-size:1.6rem;color:var(--teal-400);font-weight:700">$128K</div></div>
+              <div><b style="color:var(--navy-900)">Revenue per trade</b><div style="font-family:var(--font-display);font-size:1.6rem;color:var(--teal-400);font-weight:700">$0.42</div></div>
+              <div><b style="color:var(--navy-900)">Monthly churn</b><div style="font-family:var(--font-display);font-size:1.6rem;color:#1c8d5d;font-weight:700">2.1%</div></div>
+              <button class="btn btn-primary" style="margin-top:8px;justify-content:center" onclick="showToast('Downloading financial report…','success')">Download Full Report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: REPORTS ==================== -->
+      <div id="tab-reports" class="dash-tab" data-tab="reports" data-heading="Reports & Analytics">
+        <div class="dash-head" data-anim="left"><h1>Reports & Analytics</h1><p>Generate and view operational reports.</p></div>
+        <div class="dash-grid cols-3" style="margin-bottom:22px">
+          <div class="stat-card"><div class="lab"><span class="sicn">📄</span> Reports Generated</div><div class="val">284</div><div class="delta up">This quarter</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">📊</span> Scheduled Reports</div><div class="val">12</div></div>
+          <div class="stat-card"><div class="lab"><span class="sicn">📅</span> Last Generated</div><div class="val">Today</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Available Reports</h3><button class="btn btn-primary btn-sm" onclick="showToast('Generating new report…','info')">Generate New</button></div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead><tr><th>Report Name</th><th>Frequency</th><th>Last Run</th><th>Format</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td><b>Daily Trading Summary</b></td><td>Daily</td><td>Today 6:00 PM</td><td>PDF, CSV</td><td><a href="#" class="pill">Download</a></td></tr>
+                <tr><td><b>Weekly User Growth</b></td><td>Weekly</td><td>Jun 22</td><td>PDF, XLSX</td><td><a href="#" class="pill">Download</a></td></tr>
+                <tr><td><b>Monthly Compliance Audit</b></td><td>Monthly</td><td>Jun 01</td><td>PDF</td><td><a href="#" class="pill">Download</a></td></tr>
+                <tr><td><b>Quarterly Financials</b></td><td>Quarterly</td><td>Apr 01</td><td>PDF, XLSX</td><td><a href="#" class="pill">Download</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB: SETTINGS (ADMIN) ==================== -->
+      <div id="tab-settings" class="dash-tab" data-tab="settings" data-heading="Admin Settings">
+        <div class="dash-head" data-anim="left"><h1>Admin Settings</h1><p>Manage platform configuration, roles, and security.</p></div>
+        <div class="panel" data-anim="left">
+          <div class="settings-section">
+            <h3>Platform Configuration</h3>
+            <div class="toggle-row"><div class="info"><b>Maintenance Mode</b><span>Display maintenance page to users</span></div><div class="toggle-switch"></div></div>
+            <div class="toggle-row"><div class="info"><b>Auto-approve KYC</b><span>For Tier 1 & 2 verifications</span></div><div class="toggle-switch on"></div></div>
+            <div class="toggle-row"><div class="info"><b>Fraud Detection</b><span>Real-time transaction monitoring</span></div><div class="toggle-switch on"></div></div>
+            <div class="toggle-row"><div class="info"><b>Audit Logging</b><span>Track all admin actions</span></div><div class="toggle-switch on"></div></div>
+          </div>
+          <div class="settings-section">
+            <h3>Admin Access</h3>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn btn-primary btn-sm" onclick="showToast('Invitation sent to new admin.','success')">Invite Admin</button>
+              <button class="btn btn-ghost btn-sm">Manage Roles</button>
+              <button class="btn btn-ghost btn-sm">View Audit Log</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="./js/main.js"></script>
+</body>
+</html>

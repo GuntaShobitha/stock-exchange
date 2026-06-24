@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Login — STACKLY</title>
+<meta name="description" content="Sign in to your STACKLY trading account."/>
+<link rel="icon" type="image/webp" href="./images/logo-dark.webp"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"/>
+<link rel="stylesheet" href="./css/styles.css"/>
+</head>
+<body>
+<main class="auth-wrap">
+  <aside class="auth-brand" data-anim="left">
+    <div>
+      <a href="index.html" class="auth-back">← Back to Home</a>
+      <div class="auth-logo" style="margin-top:38px">
+        <img src="./images/logo-dark.webp" alt="STACKLY"/>
+        <b style="font-family:var(--font-display);font-size:1.2rem">STACKLY</b>
+      </div>
+      <h1>Welcome back to the <span class="accent">trading floor</span>.</h1>
+      <p class="lead">Sign in to access real-time markets, your portfolio, and institutional-grade execution.</p>
+    </div>
+    <div class="auth-stats">
+      <div class="m" data-anim="zoom" data-delay="2"><b>$2.4T</b><span>Assets traded</span></div>
+      <div class="m" data-anim="zoom" data-delay="3"><b>180+</b><span>Global markets</span></div>
+      <div class="m" data-anim="zoom" data-delay="4"><b>99.99%</b><span>Uptime SLA</span></div>
+    </div>
+  </aside>
+  <section class="auth-card-side">
+    <div class="auth-card" data-anim="right">
+      <div id="login-panel">
+        <h2>Sign in</h2>
+        <p class="auth-sub">Choose your access level and continue to the platform.</p>
+        <div id="auth-msg" class="auth-msg"></div>
+        <form id="login-form" class="form" autocomplete="on" novalidate>
+          <div class="field">
+            <label>Role</label>
+            <div class="role-select">
+              <input type="hidden" name="role" value=""/>
+              <button type="button" class="role-trigger">
+                <span class="icon-l" style="top:50%;transform:translateY(-50%)">◈</span>
+                <span class="role-label placeholder">Select your role</span>
+                <span class="chev">▾</span>
+              </button>
+              <div class="role-menu">
+                <div class="role-opt" data-role="user">
+                  <div class="ro-ic">◉</div>
+                  <div><b>User</b><span>Trader / Investor dashboard</span></div>
+                </div>
+                <div class="role-opt" data-role="admin">
+                  <div class="ro-ic">◆</div>
+                  <div><b>Admin</b><span>Operations & compliance console</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <span class="icon-l">✉</span>
+            <input class="input" name="email" type="email" placeholder="you@stackly.com" autocomplete="email"/>
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <span class="icon-l">⚿</span>
+            <input class="input" name="password" type="password" placeholder="••••••••" autocomplete="current-password"/>
+          </div>
+          <div class="auth-row">
+            <label><input type="checkbox"/> Remember me</label>
+            <a href="#" id="forgot-link" class="forgot">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary auth-btn">Login →</button>
+          <p class="auth-foot">Need an account? <a href="contact.html">Get in touch with sales</a></p>
+        </form>
+      </div>
+      <div id="forgot-panel" class="forgot-panel">
+        <h2>Reset password</h2>
+        <p class="auth-sub">Enter your email and we'll send a secure recovery link.</p>
+        <div id="forgot-msg" class="auth-msg"></div>
+        <form id="forgot-form" class="form" novalidate>
+          <div class="field">
+            <label>Email</label>
+            <span class="icon-l">✉</span>
+            <input class="input" name="email" type="email" placeholder="you@stackly.com" required/>
+          </div>
+          <button type="submit" class="btn btn-primary auth-btn">Send recovery link</button>
+          <p class="auth-foot"><a href="#" id="back-login">← Back to sign in</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="./js/main.js"></script>
+</body>
+</html>
