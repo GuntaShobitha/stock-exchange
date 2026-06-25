@@ -205,14 +205,39 @@
   setupDashboardTabs();
 
   /* ============ DASHBOARD SIDEBAR ============ */
-  const menuBtn = $(".dash-menu-btn");
-  const side = $(".dash-side");
-  const overlay = $(".dash-side-overlay");
-  if (menuBtn && side) {
-    const closeSide = () => { side.classList.remove("open"); overlay && overlay.classList.remove("show"); };
-    menuBtn.addEventListener("click", () => { side.classList.toggle("open"); overlay && overlay.classList.toggle("show"); });
-    overlay && overlay.addEventListener("click", closeSide);
+  // const menuBtn = $(".dash-menu-btn");
+  // const side = $(".dash-side");
+  // const overlay = $(".dash-side-overlay");
+  // if (menuBtn && side) {
+  //   const closeSide = () => { side.classList.remove("open"); overlay && overlay.classList.remove("show"); };
+  //   menuBtn.addEventListener("click", () => { side.classList.toggle("open"); overlay && overlay.classList.toggle("show"); });
+  //   overlay && overlay.addEventListener("click", closeSide);
+  // }
+
+const menuBtn = $(".dash-menu-btn");
+const side = $(".dash-side");
+const overlay = $(".dash-side-overlay");
+const closeBtn = $("#closeSidebar");
+
+const closeSide = () => {
+  side.classList.remove("open");
+  overlay && overlay.classList.remove("show");
+   document.body.classList.remove("sidebar-open");
+};
+
+if (menuBtn && side) {
+ menuBtn.addEventListener("click", () => {
+  const isOpen = side.classList.toggle("open");
+
+  overlay && overlay.classList.toggle("show", isOpen);
+
+  if (isOpen) {
+    document.body.classList.add("sidebar-open");
+  } else {
+    document.body.classList.remove("sidebar-open");
   }
+});
+}
 
   /* ============ DASHBOARD LOGOUT ============ */
   const logoutBtn = $("#dash-logout");
@@ -231,11 +256,15 @@
       const u = JSON.parse(raw);
       const nameEl = $("#dash-username");
       const nameEl2 = $("#dash-username2");
+      const headerusername = $("#header-user-name")
+      const headerlettername = $("#dash-initial-header")
       const initEl = $("#dash-initial");
       const uname = u.email ? u.email.split("@")[0] : "Trader";
       if (nameEl) nameEl.textContent = uname;
       if (nameEl2) nameEl2.textContent = uname;
+      if(headerusername) headerusername.textContent = uname;
       if (initEl) initEl.textContent = uname.charAt(0).toUpperCase();
+      if (headerlettername) headerlettername.textContent = uname.charAt(0).toUpperCase();
     }
   } catch {}
 
