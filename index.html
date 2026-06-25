@@ -18,90 +18,51 @@
 
 <body>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container nav-inner">
-<a href="index.html" class="nav-logo" aria-label="STACKLY Home"><img src="./images/logo-dark.webp" alt="STACKLY Logo"
-          class="nav-logo-img" /></a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="blog.html">Insights</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html" class="btn btn-primary">Login</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </header>
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img"/></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Insights</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn btn-primary" style="padding: 10px 15px;">Login</a>
+    </nav>
+    <button class="menu-toggle" style="margin-right: 10px;" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-  <!-- 1 HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div data-anim="left">
-        <span class="eyebrow"><span class="dot"></span> Markets Open · NYSE · NASDAQ</span>
-        <h1>Trade smarter on the world's most <span class="accent">trusted exchange</span>.</h1>
-        <p class="lead">STACKLY connects institutions and individual investors to global equities, ETFs and derivatives
-          with sub-millisecond execution and Tier-1 liquidity.</p>
-        <div class="hero-cta">
-          <a href="contact.html" class="btn btn-primary">Start Investing →</a>
-          <a href="services.html" class="btn btn-ghost">Explore Markets</a>
-        </div>
-        <div class="hero-meta">
-          <div class="m"><b data-count="2.4" data-suffix="T">0</b><span>Assets traded annually</span></div>
-          <div class="m"><b data-count="180" data-suffix="+">0</b><span>Global markets</span></div>
-          <div class="m"><b data-count="99.99" data-suffix="%">0</b><span>Platform uptime</span></div>
-        </div>
+<!-- 1 HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div data-anim="left" style="padding: 10px;">
+      <span class="eyebrow"><span class="dot"></span> Markets Open · NYSE · NASDAQ</span>
+      <h1>Trade smarter on the world's most <span class="accent">trusted exchange</span>.</h1>
+      <p class="lead">STACKLY connects institutions and individual investors to global equities, ETFs and derivatives with sub-millisecond execution and Tier-1 liquidity.</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary">Start Investing →</a>
+        <a href="services.html" class="btn btn-ghost">Explore Markets</a>
       </div>
-      <div data-anim="right" data-delay="2">
-        <div class="ticker-card">
-          <div class="ticker-head">
-            <h3>Live Watchlist</h3><span class="live-tag">● LIVE</span>
-          </div>
-          <div class="tk-row">
-            <div>
-              <div class="tk-sym">AAPL</div><span class="tk-name">Apple Inc.</span>
-            </div>
-            <div>
-              <div class="tk-price" data-ticker="232.84">232.84</div><span class="tk-chg up">+0.00%</span>
-            </div>
-          </div>
-          <div class="tk-row">
-            <div>
-              <div class="tk-sym">MSFT</div><span class="tk-name">Microsoft</span>
-            </div>
-            <div>
-              <div class="tk-price" data-ticker="448.12">448.12</div><span class="tk-chg up">+0.00%</span>
-            </div>
-          </div>
-          <div class="tk-row">
-            <div>
-              <div class="tk-sym">NVDA</div><span class="tk-name">NVIDIA</span>
-            </div>
-            <div>
-              <div class="tk-price" data-ticker="138.27">138.27</div><span class="tk-chg up">+0.00%</span>
-            </div>
-          </div>
-          <div class="tk-row">
-            <div>
-              <div class="tk-sym">TSLA</div><span class="tk-name">Tesla</span>
-            </div>
-            <div>
-              <div class="tk-price" data-ticker="244.50">244.50</div><span class="tk-chg up">+0.00%</span>
-            </div>
-          </div>
-          <div class="tk-row">
-            <div>
-              <div class="tk-sym">GOOG</div><span class="tk-name">Alphabet</span>
-            </div>
-            <div>
-              <div class="tk-price" data-ticker="172.91">172.91</div><span class="tk-chg up">+0.00%</span>
-            </div>
-          </div>
-        </div>
+      <div class="hero-meta">
+        <div class="m"><b data-count="2.4" data-suffix="T">0</b><span>Assets traded annually</span></div>
+        <div class="m"><b data-count="180" data-suffix="+">0</b><span>Global markets</span></div>
+        <div class="m"><b data-count="99.99" data-suffix="%">0</b><span>Platform uptime</span></div>
       </div>
     </div>
-  </section>
+    <div data-anim="right" data-delay="2">
+      <div class="ticker-card">
+        <div class="ticker-head"><h3>Live Watchlist</h3><span class="live-tag">● LIVE</span></div>
+        <div class="tk-row"><div><div class="tk-sym">AAPL</div><span class="tk-name">Apple Inc.</span></div><div><div class="tk-price" data-ticker="232.84">232.84</div><span class="tk-chg up">+0.00%</span></div></div>
+        <div class="tk-row"><div><div class="tk-sym">MSFT</div><span class="tk-name">Microsoft</span></div><div><div class="tk-price" data-ticker="448.12">448.12</div><span class="tk-chg up">+0.00%</span></div></div>
+        <div class="tk-row"><div><div class="tk-sym">NVDA</div><span class="tk-name">NVIDIA</span></div><div><div class="tk-price" data-ticker="138.27">138.27</div><span class="tk-chg up">+0.00%</span></div></div>
+        <div class="tk-row"><div><div class="tk-sym">TSLA</div><span class="tk-name">Tesla</span></div><div><div class="tk-price" data-ticker="244.50">244.50</div><span class="tk-chg up">+0.00%</span></div></div>
+        <div class="tk-row"><div><div class="tk-sym">GOOG</div><span class="tk-name">Alphabet</span></div><div><div class="tk-price" data-ticker="172.91">172.91</div><span class="tk-chg up">+0.00%</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- 2 MARQUEE -->
   <div class="marquee">
@@ -201,30 +162,29 @@
     </div>
   </section>
 
-  <!-- 4 SPLIT -->
-  <section class="section section-tint">
-    <div class="container">
-      <div class="split">
-        <div class="split-img" data-anim="left">
-          <img src="./images/advisor.webp" alt="Trader analyzing markets" width="1000" height="1200" loading="lazy" />
-          <div class="badge">📊 Real Portfolio Performance · +28.4% YTD</div>
-        </div>
-        <div class="split-text" data-anim="right">
-          <span class="eyebrow">The Trading Desk</span>
-          <h2>Professional tools, redesigned for clarity.</h2>
-          <p>Our flagship terminal brings Bloomberg-class workflows into a modern, browser-native experience. One canvas
-            for charts, screeners, news, and order routing.</p>
-          <ul class="ck-list">
-            <li>120+ technical indicators with custom Pine-style scripting</li>
-            <li>Hot-key trading, bracket orders, and one-click hedging</li>
-            <li>Streaming news from Reuters, Dow Jones, and Benzinga</li>
-            <li>Customizable workspaces synced across devices</li>
-          </ul>
-          <a href="services.html" class="btn btn-primary">See the Terminal →</a>
-        </div>
+<!-- 4 SPLIT -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="split">
+      <div class="split-img" data-anim="left">
+        <img src="./images/advisor.webp" alt="Trader analyzing markets" width="1000" height="1200" loading="lazy"/>
+        <div class="badge">📊 Real Portfolio Performance · +28.4% YTD</div>
+      </div>
+      <div class="split-text" data-anim="right">
+        <span class="eyebrow">The Trading Desk</span>
+        <h2>Professional tools, redesigned for clarity.</h2>
+        <p>Our flagship terminal brings Bloomberg-class workflows into a modern, browser-native experience. One canvas for charts, screeners, news, and order routing.</p>
+        <ul class="ck-list">
+          <li>120+ technical indicators with custom Pine-style scripting</li>
+          <li>Hot-key trading, bracket orders, and one-click hedging</li>
+          <li>Streaming news from Reuters, Dow Jones, and Benzinga</li>
+          <li>Customizable workspaces synced across devices</li>
+        </ul>
+        <a href="404.html" class="btn btn-primary">See the Terminal →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- 5 STATS -->
   <section class="section">
@@ -238,80 +198,79 @@
     </div>
   </section>
 
-  <!-- 6 SPLIT 2 -->
-  <section class="section">
-    <div class="container">
-      <div class="split reverse">
-        <div class="split-img" data-anim="right">
-          <img src="./images/mobile.webp" alt="Mobile trading app" width="1200" height="800" loading="lazy" />
-        </div>
-        <div class="split-text" data-anim="left">
-          <span class="eyebrow">Mobile First</span>
-          <h2>Your portfolio in your pocket.</h2>
-          <p>A redesigned mobile experience that doesn't compromise. Same execution engine, same data feeds, half the
-            friction. Available on iOS and Android.</p>
-          <ul class="ck-list">
-            <li>Biometric authentication & hardware-key support</li>
-            <li>Push alerts for price triggers, earnings, and news</li>
-            <li>Voice search across 12,000+ instruments</li>
-            <li>Dark-mode native, Apple Watch complications</li>
-          </ul>
-          <a href="contact.html" class="btn btn-ghost">Download App</a>
-        </div>
+<!-- 6 SPLIT 2 -->
+<section class="section">
+  <div class="container">
+    <div class="split reverse">
+      <div class="split-img" data-anim="right">
+        <img src="./images/mobile.webp" alt="Mobile trading app" width="1200" height="800" loading="lazy"/>
+      </div>
+      <div class="split-text" data-anim="left">
+        <span class="eyebrow">Mobile First</span>
+        <h2>Your portfolio in your pocket.</h2>
+        <p>A redesigned mobile experience that doesn't compromise. Same execution engine, same data feeds, half the friction. Available on iOS and Android.</p>
+        <ul class="ck-list">
+          <li>Biometric authentication & hardware-key support</li>
+          <li>Push alerts for price triggers, earnings, and news</li>
+          <li>Voice search across 12,000+ instruments</li>
+          <li>Dark-mode native, Apple Watch complications</li>
+        </ul>
+        <a href="404.html" class="btn btn-ghost">Download App</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 7 PRICING -->
-  <section class="section section-tint">
-    <div class="container">
-      <div class="section-head" data-anim>
-        <span class="eyebrow">Pricing</span>
-        <h2>Transparent, simple, no surprises.</h2>
-        <p>Pay for what you trade — never for inactivity, data, or basic features.</p>
+<!-- 7 PRICING -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head" data-anim>
+      <span class="eyebrow">Pricing</span>
+      <h2>Transparent, simple, no surprises.</h2>
+      <p>Pay for what you trade — never for inactivity, data, or basic features.</p>
+    </div>
+    <div class="pricing">
+      <div class="plan" data-anim data-delay="1">
+        <h3>Starter</h3>
+        <div class="price">$0<small>/month</small></div>
+        <p>Built for new investors learning the markets.</p>
+        <ul>
+          <li>✓ Commission-free US stocks & ETFs</li>
+          <li>✓ Real-time quotes</li>
+          <li>✓ Mobile + Web app</li>
+          <li>✓ Educational library</li>
+        </ul>
+        <a href="404.html" class="btn btn-ghost" style="width:100%;justify-content:center">Get Started</a>
       </div>
-      <div class="pricing">
-        <div class="plan" data-anim data-delay="1">
-          <h3>Starter</h3>
-          <div class="price">$0<small>/month</small></div>
-          <p>Built for new investors learning the markets.</p>
-          <ul>
-            <li>✓ Commission-free US stocks & ETFs</li>
-            <li>✓ Real-time quotes</li>
-            <li>✓ Mobile + Web app</li>
-            <li>✓ Educational library</li>
-          </ul>
-          <a href="contact.html" class="btn btn-ghost" style="width:100%;justify-content:center">Get Started</a>
-        </div>
-        <div class="plan featured" data-anim data-delay="2">
-          <span class="tag-pop">MOST POPULAR</span>
-          <h3>Active Trader</h3>
-          <div class="price">$29<small>/month</small></div>
-          <p>For traders who need pro tools and deep data.</p>
-          <ul>
-            <li>✓ Everything in Starter</li>
-            <li>✓ Level 2 market depth</li>
-            <li>✓ Advanced charting & scripting</li>
-            <li>✓ Margin & options trading</li>
-            <li>✓ Priority support</li>
-          </ul>
-          <a href="contact.html" class="btn btn-white" style="width:100%;justify-content:center">Start 30-Day Trial</a>
-        </div>
-        <div class="plan" data-anim data-delay="3">
-          <h3>Institutional</h3>
-          <div class="price">Custom<small></small></div>
-          <p>White-glove service for funds and family offices.</p>
-          <ul>
-            <li>✓ Dedicated account manager</li>
-            <li>✓ FIX & API integration</li>
-            <li>✓ Prime brokerage routing</li>
-            <li>✓ Custom reporting</li>
-          </ul>
-          <a href="contact.html" class="btn btn-ghost" style="width:100%;justify-content:center">Talk to Sales</a>
-        </div>
+      <div class="plan featured" data-anim data-delay="2">
+        <span class="tag-pop">MOST POPULAR</span>
+        <h3>Active Trader</h3>
+        <div class="price">$29<small>/month</small></div>
+        <p>For traders who need pro tools and deep data.</p>
+        <ul>
+          <li>✓ Everything in Starter</li>
+          <li>✓ Level 2 market depth</li>
+          <li>✓ Advanced charting & scripting</li>
+          <li>✓ Margin & options trading</li>
+          <li>✓ Priority support</li>
+        </ul>
+        <a href="404.html" class="btn btn-white" style="width:100%;justify-content:center">Start 30-Day Trial</a>
+      </div>
+      <div class="plan" data-anim data-delay="3">
+        <h3>Institutional</h3>
+        <div class="price">Custom<small></small></div>
+        <p>White-glove service for funds and family offices.</p>
+        <ul>
+          <li>✓ Dedicated account manager</li>
+          <li>✓ FIX & API integration</li>
+          <li>✓ Prime brokerage routing</li>
+          <li>✓ Custom reporting</li>
+        </ul>
+        <a href="404.html" class="btn btn-ghost" style="width:100%;justify-content:center">Talk to Sales</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- NEW SECTION: Platform Integrations -->
   <section class="section">
@@ -492,74 +451,46 @@
     </div>
   </section>
 
-  <!-- 11 CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-band" data-anim="zoom">
-        <h2>Your edge starts with the right platform.</h2>
-        <p>Join 3.2 million traders who chose STACKLY for institutional-grade execution and brilliant tools.</p>
-        <div class="hero-cta">
-          <a href="contact.html" class="btn btn-primary">Open Free Account →</a>
-          <a href="about.html" class="btn btn-white">Why STACKLY</a>
-        </div>
+<!-- 11 CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band" data-anim="zoom">
+      <h2>Your edge starts with the right platform.</h2>
+      <p>Join 3.2 million traders who chose STACKLY for institutional-grade execution and brilliant tools.</p>
+      <div class="hero-cta">
+        <a href="404.html" class="btn btn-primary">Open Free Account →</a>
+        <a href="about.html" class="btn btn-white">Why STACKLY</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="foot-grid">
-        <div>
-          <img src="./images/logo-dark.webp" alt="STACKLY" class="foot-logo" />
-          <p>The professional stock exchange platform for the next generation of investors. Regulated by FINRA & SEC.
-          </p>
-          <div class="socials">
-            <a href="404.html" aria-label="Twitter">𝕏</a>
-            <a href="404.html" aria-label="LinkedIn">in</a>
-            <a href="404.html" aria-label="YouTube">▶</a>
-            <a href="404.html" aria-label="Instagram">◎</a>
-          </div>
-        </div>
-        <div>
-          <h4>Platform</h4>
-          <ul>
-            <li><a href="404.html">Trading Terminal</a></li>
-            <li><a href="404.html">Mobile App</a></li>
-            <li><a href="404.html">APIs</a></li>
-            <li><a href="404.html">Research</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Markets</h4>
-          <ul>
-            <li><a href="404.html">US Equities</a></li>
-            <li><a href="404.html">Options</a></li>
-            <li><a href="404.html">Futures</a></li>
-            <li><a href="404.html">Crypto</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Insights</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="contact.html">Careers</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Get the brief</h4>
-          <p style="margin-bottom:14px">Weekly market notes from our research desk.</p>
-          <form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Subscribed';">
-            <input class="input" placeholder="you@example.com" type="email" required /><button class="btn btn-primary"
-              type="submit">Subscribe</button></form>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <img src="./images/logo-dark.webp" alt="STACKLY" class="foot-logo"/>
+        <p>The professional stock exchange platform for the next generation of investors. Regulated by FINRA & SEC.</p>
+        <div class="socials">
+          <a href="404.html" aria-label="Twitter">𝕏</a>
+          <a href="404.html" aria-label="LinkedIn">in</a>
+          <a href="404.html" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+</svg></a>
+          <a href="404.html" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+</svg></a>
         </div>
       </div>
-      <div class="copy">© 2026 STACKLY Financial, Inc. · All rights reserved · Securities offered through STACKLY
-        Securities LLC, member FINRA/SIPC.</div>
+      <div><h4>Platform</h4><ul><li><a href="services.html">Trading Terminal</a></li><li><a href="services.html">Mobile App</a></li><li><a href="services.html">APIs</a></li><li><a href="services.html">Research</a></li></ul></div>
+      <div><h4>Markets</h4><ul><li><a href="services.html">US Equities</a></li><li><a href="services.html">Options</a></li><li><a href="services.html">Futures</a></li><li><a href="services.html">Crypto</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Insights</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html">Careers</a></li></ul></div>
+      <div><h4>Get the brief</h4><p style="margin-bottom:14px">Weekly market notes from our research desk.</p><form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Subscribed';"><input class="input" placeholder="you@example.com" type="email" required/><button class="btn btn-primary" type="submit">Subscribe</button></form></div>
     </div>
-  </footer>
+    <div class="copy">© 2026 STACKLY Financial, Inc. · All rights reserved · Securities offered through STACKLY Securities LLC, member FINRA/SIPC.</div>
+  </div>
+</footer>
 
   <script src="./js/bg-motion.js"></script>
   <script src="./js/main.js"></script>

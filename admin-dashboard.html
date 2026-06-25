@@ -19,10 +19,10 @@
 
   <!-- Sidebar -->
   <aside class="dash-side">
-    <a class="brand" href="index.html" aria-label="STACKLY Home">
-      <img src="./images/logo-dark.webp" alt="STACKLY"/>
-      
-    </a>
+    <div class="brand" style="display: flex; justify-content: space-between; width: 100%;">
+      <a href="admin-dashboard.html"><img src="./images/logo-dark.webp" alt="STACKLY"/></a>
+      <div style="font-size: 20px;" class="clos-x-button" id="closeSidebar">x</div>
+    </div>
     <div class="dash-user">
       <div class="av" id="dash-initial">A</div>
       <div>
@@ -49,13 +49,15 @@
     <div class="dash-top">
       <button class="dash-menu-btn" aria-label="Menu">☰</button>
       <div class="crumbs"> <b>Admin Console</b></div>
-      <div class="dash-search">
-        <input type="text" placeholder="Search users, tickets, listings…"/>
-        <div class="search-results"></div>
-      </div>
+      
       <div class="dash-top-actions">
-        <button class="icon-btn" aria-label="Alerts" onclick="showToast('3 compliance flags require attention','error')">⚠<span class="ping"></span></button>
-        <button class="icon-btn" aria-label="Messages">✉</button>
+        <button class="icon-btn" aria-label="Alerts" onclick="location.href='404.html'">⚠<span class="ping"></span></button>
+        <div class="dash-user" style="border: 1px solid gainsboro; border-radius: 30px; padding: 5px 15px;">
+          <div class="av" id="dash-initial-header" style="font-size: 10px; width: 30px; height: 30px;">S</div>
+          <div>
+            <b id="header-user-name" style="color: #000; font-size: 12px;">Trader</b>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -115,9 +117,9 @@
         </div>
 
         <!-- Users table + analyst -->
-        <div class="dash-grid span-2-1" style="margin-bottom:22px">
+        <div class="dash-grid span-2-1" style="margin-bottom:22px; width: 100%;">
           <div class="panel" data-anim="zoom">
-            <div class="panel-head"><h3>Recent users</h3><a href="#" class="pill">Manage →</a></div>
+            <div class="panel-head"><h3>Recent users</h3><a href="404.html" class="pill">Manage →</a></div>
             <div class="dash-table-wrap">
               <table class="dash-table">
                 <thead><tr><th>User</th><th>Plan</th><th>Region</th><th>Joined</th><th>Status</th></tr></thead>
@@ -137,8 +139,8 @@
             <b style="font-family:var(--font-display);color:var(--navy-900);font-size:1.05rem">Sarah Mitchell</b>
             <p style="color:var(--muted);font-size:.9rem;margin-top:4px">Coverage: US equities, semiconductors, AI infra. 12 reports this quarter.</p>
             <div style="margin-top:14px;display:flex;gap:8px">
-              <a href="#" class="btn btn-primary btn-sm">View desk →</a>
-              <a href="#" class="btn btn-ghost btn-sm">Schedule</a>
+              <a href="404.html" class="btn btn-primary btn-sm">View desk →</a>
+              <a href="404.html" class="btn btn-ghost btn-sm">Schedule</a>
             </div>
           </div>
         </div>
@@ -146,7 +148,7 @@
         <!-- Revenue banner -->
         <div class="dash-banner" data-anim="zoom">
           <div><h4>Monthly revenue report ready</h4><p>$3.84M in trading fees · 24% YoY growth. Download the full investor pack.</p></div>
-          <a href="#" class="btn btn-white">Download report →</a>
+          <a href="404.html" class="btn btn-white">Download report →</a>
         </div>
       </div>
 
@@ -160,7 +162,7 @@
           <div class="stat-card"><div class="lab"><span class="sicn">🚫</span> Blocked</div><div class="val">142</div><div class="delta down">▼ -12 this week</div></div>
         </div>
         <div class="panel">
-          <div class="panel-head"><h3>All Users</h3><div style="display:flex;gap:8px"><input class="input" placeholder="Search users…" style="width:280px;padding:8px 14px"/><button class="btn btn-primary btn-sm">Search</button></div></div>
+          <div class="panel-head"><h3>All Users</h3><div style="display:flex;gap:8px"></div></div>
           <div class="dash-table-wrap">
             <table class="dash-table">
               <thead><tr><th>Email</th><th>Plan</th><th>Region</th><th>Joined</th><th>Volume</th><th>Status</th><th>Action</th></tr></thead>
@@ -252,7 +254,7 @@
               <div><b style="color:var(--navy-900)">Avg. daily revenue</b><div style="font-family:var(--font-display);font-size:1.6rem;color:var(--teal-400);font-weight:700">$128K</div></div>
               <div><b style="color:var(--navy-900)">Revenue per trade</b><div style="font-family:var(--font-display);font-size:1.6rem;color:var(--teal-400);font-weight:700">$0.42</div></div>
               <div><b style="color:var(--navy-900)">Monthly churn</b><div style="font-family:var(--font-display);font-size:1.6rem;color:#1c8d5d;font-weight:700">2.1%</div></div>
-              <button class="btn btn-primary" style="margin-top:8px;justify-content:center" onclick="showToast('Downloading financial report…','success')">Download Full Report</button>
+              <button class="btn btn-primary" style="margin-top:8px;justify-content:center" onclick="window.location.href='404.html'">Download Full Report</button>
             </div>
           </div>
         </div>
@@ -267,7 +269,7 @@
           <div class="stat-card"><div class="lab"><span class="sicn">📅</span> Last Generated</div><div class="val">Today</div></div>
         </div>
         <div class="panel">
-          <div class="panel-head"><h3>Available Reports</h3><button class="btn btn-primary btn-sm" onclick="showToast('Generating new report…','info')">Generate New</button></div>
+          <div class="panel-head"><h3>Available Reports</h3><button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'">Generate New</button></div>
           <div class="dash-table-wrap">
             <table class="dash-table">
               <thead><tr><th>Report Name</th><th>Frequency</th><th>Last Run</th><th>Format</th><th>Action</th></tr></thead>
@@ -296,9 +298,9 @@
           <div class="settings-section">
             <h3>Admin Access</h3>
             <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <button class="btn btn-primary btn-sm" onclick="showToast('Invitation sent to new admin.','success')">Invite Admin</button>
-              <button class="btn btn-ghost btn-sm">Manage Roles</button>
-              <button class="btn btn-ghost btn-sm">View Audit Log</button>
+              <button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'">Invite Admin</button>
+              <button class="btn btn-ghost btn-sm" onclick="window.location.href='404.html'">Manage Roles</button>
+              <button class="btn btn-ghost btn-sm" onclick="window.location.href='404.html'">View Audit Log</button>
             </div>
           </div>
         </div>

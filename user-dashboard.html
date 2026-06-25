@@ -19,14 +19,14 @@
 
   <!-- Sidebar -->
   <aside class="dash-side">
-    <a class="brand" href="index.html" aria-label="STACKLY Home">
-      <img src="./images/logo-dark.webp" alt="STACKLY"/>
-      
-    </a>
+    <div class="brand" style="display: flex; justify-content: space-between; width: 100%;">
+      <a href="user-dashboard.html"><img src="./images/logo-dark.webp" alt="STACKLY"/></a>
+      <div style="font-size: 20px;" class="clos-x-button" id="closeSidebar">x</div>
+    </div>
     <div class="dash-user">
-      <div class="av" id="dash-initial">S</div>
+      <div class="av" id="dash-initial-header">S</div>
       <div>
-        <b id="dash-username">Trader</b>
+        <b id="header-user-name">Trader</b>
         <span>User · Member</span>
       </div>
     </div>
@@ -49,13 +49,14 @@
     <div class="dash-top">
       <button class="dash-menu-btn" aria-label="Menu">☰</button>
       <div class="crumbs"> <b>Dashboard</b></div>
-      <div class="dash-search">
-        <input type="text" placeholder="Search symbols, news, orders…"/>
-        <div class="search-results"></div>
-      </div>
       <div class="dash-top-actions">
-        <button class="icon-btn" aria-label="Notifications" onclick="showToast('New alert: AAPL target raised','info')">🔔<span class="ping"></span></button>
-        <button class="icon-btn" aria-label="Messages">✉</button>
+        <button class="icon-btn" aria-label="Notifications" onclick="location.href='404.html'">🔔<span class="ping"></span></button>
+        <div class="dash-user" style="border: 1px solid gainsboro; border-radius: 30px; padding: 5px 15px;">
+          <div class="av" id="dash-initial" style="font-size: 10px; width: 30px; height: 30px;">S</div>
+          <div>
+            <b id="dash-username" style="color: #000; font-size: 12px;" style="font-size: 10px;">Trader</b>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -149,7 +150,7 @@
         <!-- Banner -->
         <div class="dash-banner" data-anim="zoom">
           <div><h4>Upgrade to STACKLY Pro</h4><p>Unlock advanced charting, options chains, and a personal portfolio advisor.</p></div>
-          <a href="#" class="btn btn-white">Explore Pro →</a>
+          <a href="404.html" class="btn btn-white">Explore Pro →</a>
         </div>
       </div>
 
@@ -250,8 +251,8 @@
               <div class="field"><label>Price (for Limit)</label><input class="input" placeholder="Market price" disabled/></div>
             </div>
             <div style="display:flex;gap:10px;margin-top:16px">
-              <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="showToast('Order placed successfully!','success')">Place Order</button>
-              <button class="btn btn-ghost" style="flex:1;justify-content:center">Preview</button>
+              <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="window.location.href='404.html'">Place Order</button>
+              <button class="btn btn-ghost" style="flex:1;justify-content:center" onclick="window.location.href='404.html'">Preview</button>
             </div>
           </div>
           <div class="panel" data-anim="right">
@@ -265,7 +266,7 @@
           </div>
         </div>
         <div class="panel" data-anim="zoom">
-          <div class="panel-head"><h3>Order History</h3><a href="#" class="pill">Export →</a></div>
+          <div class="panel-head"><h3>Order History</h3><a href="404.html" class="pill">Export →</a></div>
           <div class="dash-table-wrap">
             <table class="dash-table">
               <thead><tr><th>Date</th><th>Type</th><th>Symbol</th><th>Side</th><th>Qty</th><th>Price</th><th>Status</th></tr></thead>
@@ -320,8 +321,8 @@
             <div style="display:flex;flex-direction:column;gap:12px">
               <button class="btn btn-primary" onclick="showToast('Deposit initiated. Funds will arrive in 1-2 business days.','success')" style="justify-content:center">Deposit Funds</button>
               <button class="btn btn-ghost" onclick="showToast('Withdrawal request submitted.','info')" style="justify-content:center">Withdraw Funds</button>
-              <button class="btn btn-ghost" style="justify-content:center">Transfer Between Accounts</button>
-              <button class="btn btn-ghost" style="justify-content:center">View Statements</button>
+              <button class="btn btn-ghost" onclick="window.location.href='404.html'" style="justify-content:center">Transfer Between Accounts</button>
+              <button class="btn btn-ghost" onclick="window.location.href='404.html'" style="justify-content:center">View Statements</button>
             </div>
           </div>
         </div>
@@ -357,7 +358,7 @@
             <p style="color:var(--muted);font-size:.9rem;margin-bottom:14px">Ask natural-language questions about any stock, sector, or market trend.</p>
             <div style="position:relative">
               <input class="input" placeholder="e.g. Show me AI stocks with P/E < 25" style="padding-right:50px"/>
-              <button style="position:absolute;right:4px;top:4px;bottom:4px;width:40px;border-radius:10px;background:linear-gradient(135deg,var(--navy-800),var(--teal-400));color:#fff;border:none;cursor:pointer" onclick="showToast('Analyzing market data...','info')">→</button>
+              <button style="position:absolute;right:4px;top:4px;bottom:4px;width:40px;border-radius:10px;background:linear-gradient(135deg,var(--navy-800),var(--teal-400));color:#fff;border:none;cursor:pointer" onclick="window.location.href='404.html'">→</button>
             </div>
           </div>
         </div>
@@ -372,7 +373,7 @@
               <h3>Profile</h3>
               <div class="field"><label>Display Name</label><input class="input" value="Trader" placeholder="Your display name"/></div>
               <div class="field"><label>Email</label><input class="input" value="trader@stackly.com" type="email"/></div>
-              <button class="btn btn-primary btn-sm" onclick="showToast('Profile updated successfully!','success')">Save Changes</button>
+              <button class="btn btn-primary btn-sm" onclick="location.href='404.html'">Save Changes</button>
             </div>
             <div class="settings-section">
               <h3>Preferences</h3>
@@ -386,12 +387,12 @@
             <div class="settings-section">
               <h3>Security</h3>
               <div style="display:flex;flex-direction:column;gap:12px">
-                <button class="btn btn-ghost btn-sm" style="justify-content:center" onclick="showToast('Password reset link sent to your email.','info')">Change Password</button>
-                <button class="btn btn-ghost btn-sm" style="justify-content:center" onclick="showToast('API key generated. Store it securely.','info')">Generate API Key</button>
-                <button class="btn btn-ghost btn-sm" style="justify-content:center">View Login History</button>
+                <button class="btn btn-ghost btn-sm" style="justify-content:center" onclick="window.location.href='404.html'">Change Password</button>
+                <button class="btn btn-ghost btn-sm" style="justify-content:center" onclick="window.location.href='404.html'">Generate API Key</button>
+                <button class="btn btn-ghost btn-sm" style="justify-content:center" onclick="window.location.href='404.html'">View Login History</button>
                 <div style="margin-top:12px;padding:14px;background:rgba(243,112,112,.08);border-radius:var(--r-sm);text-align:center">
                   <b style="color:#c14242;font-size:.9rem">Danger Zone</b>
-                  <button class="btn btn-ghost btn-sm" style="margin-top:10px;width:100%;justify-content:center;border-color:#c14242;color:#c14242" onclick="showToast('Account deletion request submitted.','error')">Delete Account</button>
+                  <button class="btn btn-ghost btn-sm" style="margin-top:10px;width:100%;justify-content:center;border-color:#c14242;color:#c14242" >Delete Account</button>
                 </div>
               </div>
             </div>
