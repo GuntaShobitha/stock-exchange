@@ -214,30 +214,72 @@
   //   overlay && overlay.addEventListener("click", closeSide);
   // }
 
-const menuBtn = $(".dash-menu-btn");
-const side = $(".dash-side");
-const overlay = $(".dash-side-overlay");
-const closeBtn = $("#closeSidebar");
 
-const closeSide = () => {
-  side.classList.remove("open");
-  overlay && overlay.classList.remove("show");
-   document.body.classList.remove("sidebar-open");
-};
+   const menuBtn = $(".dash-menu-btn");
+  const side = $(".dash-side");
+  const overlay = $(".dash-side-overlay");
+  const closeBtn = $("#closeSidebar");
 
-if (menuBtn && side) {
- menuBtn.addEventListener("click", () => {
-  const isOpen = side.classList.toggle("open");
-
-  overlay && overlay.classList.toggle("show", isOpen);
-
-  if (isOpen) {
-    document.body.classList.add("sidebar-open");
-  } else {
+  const closeSide = () => {
+    if (!side) return;
+    side.classList.remove("open");
+    if (overlay) overlay.classList.remove("show");
     document.body.classList.remove("sidebar-open");
+  };
+
+  // Open sidebar on hamburger click
+  if (menuBtn && side) {
+    menuBtn.addEventListener("click", () => {
+      const isOpen = side.classList.toggle("open");
+      if (overlay) overlay.classList.toggle("show", isOpen);
+      document.body.classList.toggle("sidebar-open", isOpen);
+    });
   }
+
+  // Close sidebar on X button click
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeSide);
+  }
+
+  // Close sidebar on overlay click
+  if (overlay) {
+    overlay.addEventListener("click", closeSide);
+  }
+
+  // Close sidebar when any navigation link is clicked
+const navLinks = document.querySelectorAll(".dash-nav a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    closeSide();
+  });
 });
-}
+
+
+// const menuBtn = $(".dash-menu-btn");
+// const side = $(".dash-side");
+// const overlay = $(".dash-side-overlay");
+// const closeBtn = $("#closeSidebar");
+
+// const closeSide = () => {
+//   side.classList.remove("open");
+//   overlay && overlay.classList.remove("show");
+//    document.body.classList.remove("sidebar-open");
+// };
+
+// if (menuBtn && side) {
+//  menuBtn.addEventListener("click", () => {
+//   const isOpen = side.classList.toggle("open");
+
+//   overlay && overlay.classList.toggle("show", isOpen);
+
+//   if (isOpen) {
+//     document.body.classList.add("sidebar-open");
+//   } else {
+//     document.body.classList.remove("sidebar-open");
+//   }
+// });
+// }
 
   /* ============ DASHBOARD LOGOUT ============ */
   const logoutBtn = $("#dash-logout");
