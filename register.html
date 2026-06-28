@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Login — STACKLY</title>
+<meta name="description" content="Sign in to your STACKLY trading account."/>
+<link rel="icon" type="image/webp" href="./images/logo-dark.webp"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"/>
+<link rel="stylesheet" href="./css/styles.css"/>
+<style>
+  /* Register Button */
+.register-btn{
+    width:100%;
+    margin-top:14px;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+.btn-outline{
+    background:transparent;
+    border:2px solid #6fd4c5;
+    color:#6fd4c5;
+    transition:.3s ease;
+}
+
+.btn-outline:hover{
+    background:#6fd4c5;
+    color:#fff;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+
+@media(max-width:768px){
+    .form-row{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+<body>
+<main class="auth-wrap">
+  <aside class="auth-brand" data-anim="left">
+    <div>
+<a href="index.html" class="auth-back" aria-label="STACKLY Home">← Back to Home</a>
+      <div class="auth-logo" style="margin-top:38px">
+        <img src="./images/logo-dark.webp" alt="STACKLY"/>
+        
+      </div>
+      <h1>Welcome back to the <span class="accent">trading floor</span>.</h1>
+      <p class="lead">Sign in to access real-time markets, your portfolio, and institutional-grade execution.</p>
+    </div>
+    <div class="auth-stats">
+      <div class="m" data-anim="zoom" data-delay="2"><b>$2.4T</b><span>Assets traded</span></div>
+      <div class="m" data-anim="zoom" data-delay="3"><b>180+</b><span>Global markets</span></div>
+      <div class="m" data-anim="zoom" data-delay="4"><b>99.99%</b><span>Uptime SLA</span></div>
+    </div>
+  </aside>
+  <section class="auth-card-side">
+    <div id="register-panel">
+    <h2 onclick="window.location.href='404.html'">Create Account</h2>
+    <p class="auth-sub">Create your STACKLY account to start trading.</p>
+
+    <div id="auth-msg" class="auth-msg"></div>
+
+    <form id="register-form" class="form" autocomplete="on" novalidate>
+
+        <!-- First & Last Name -->
+        <div class="form-row">
+            <div class="field">
+                <label>First Name</label>
+                <span class="icon-l">👤</span>
+                <input
+                    class="input"
+                    type="text"
+                    name="firstname"
+                    placeholder="John"
+                    required>
+            </div>
+
+            <div class="field">
+                <label>Last Name</label>
+                <span class="icon-l">👤</span>
+                <input
+                    class="input"
+                    type="text"
+                    name="lastname"
+                    placeholder="Doe"
+                    required>
+            </div>
+        </div>
+
+        <!-- Role -->
+        <div class="field">
+            <label>Role</label>
+
+            <div class="role-select">
+
+                <input type="hidden" name="role">
+
+                <button type="button" class="role-trigger">
+                    <span class="icon-l" style="top:50%;transform:translateY(-50%)">◈</span>
+                    <span class="role-label placeholder">Select your role</span>
+                    <span class="chev">▾</span>
+                </button>
+
+                <div class="role-menu">
+
+                    <div class="role-opt" data-role="user">
+                        <div class="ro-ic">◉</div>
+                        <div>
+                            <b>User</b>
+                            <span>Trader / Investor</span>
+                        </div>
+                    </div>
+
+                    <div class="role-opt" data-role="admin">
+                        <div class="ro-ic">◆</div>
+                        <div>
+                            <b>Admin</b>
+                            <span>Platform Administrator</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="field">
+            <label>Email</label>
+            <span class="icon-l">✉</span>
+            <input
+                class="input"
+                type="email"
+                name="email"
+                placeholder="you@stackly.com"
+                required>
+        </div>
+
+        <!-- Mobile -->
+        <div class="field">
+            <label>Mobile Number</label>
+            <span class="icon-l">📱</span>
+            <input
+                class="input"
+                type="tel"
+                name="mobile"
+                placeholder="+91 9876543210"
+                required>
+        </div>
+
+        <!-- Password -->
+        <div class="field">
+            <label>Password</label>
+            <span class="icon-l">⚿</span>
+            <input
+                class="input"
+                type="password"
+                name="password"
+                placeholder="Create Password"
+                required>
+        </div>
+
+        <!-- Terms -->
+        <div class="auth-row">
+            <label>
+                <input type="checkbox" required>
+                I agree to the Terms & Conditions
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-btn">
+            Create Account →
+        </button>
+
+        <p class="auth-foot">
+            Already have an account?
+            <a href="login.html">Sign In</a>
+        </p>
+
+    </form>
+
+</div>
+  </section>
+</main>
+
+
+
+
+<script src="./js/main.js"></script>
+</body>
+</html>

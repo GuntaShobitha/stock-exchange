@@ -452,6 +452,33 @@ navLinks.forEach((link) => {
     });
   }
 
+// ====================================
+
+const orderTabs = document.querySelectorAll(".order-tab");
+const placeOrderBtn = document.getElementById("placeOrderBtn");
+
+orderTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+        // Remove active classes
+        orderTabs.forEach(t => {
+            t.classList.remove("on", "sell-active");
+        });
+
+        if (tab.dataset.type === "buy") {
+            tab.classList.add("on");
+            placeOrderBtn.textContent = "Place Buy Order";
+            placeOrderBtn.style.background = "#16a34a";
+        } else {
+            tab.classList.add("sell-active");
+            placeOrderBtn.textContent = "Place Sell Order";
+            placeOrderBtn.style.background = "#dc2626";
+        }
+
+    });
+});
+
+
   /* ============ RYZA-STYLE ANIMATION ENHANCEMENTS ============ */
   if (!window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     // Auto-tag elements
@@ -537,10 +564,6 @@ navLinks.forEach((link) => {
 
   console.log("STACKLY - All systems nominal \u2713");
 })();
-
-
-
-
 
 
 

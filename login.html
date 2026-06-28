@@ -10,6 +10,29 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"/>
 <link rel="stylesheet" href="./css/styles.css"/>
+<style>
+  /* Register Button */
+.register-btn{
+    width:100%;
+    margin-top:14px;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.btn-outline{
+    background:transparent;
+    border:2px solid #6fd4c5;
+    color:#6fd4c5;
+    transition:.3s ease;
+}
+
+.btn-outline:hover{
+    background:#6fd4c5;
+    color:#fff;
+}
+</style>
 </head>
 <body>
 <main class="auth-wrap">
@@ -71,8 +94,18 @@
             <label><input type="checkbox"/> Remember me</label>
             <a href="#" id="forgot-link" class="forgot">Forgot password?</a>
           </div>
-          <button type="submit" class="btn btn-primary auth-btn">Login →</button>
-          <p class="auth-foot">Need an account? <a href="contact.html">Get in touch with sales</a></p>
+          <button type="submit" class="btn btn-primary auth-btn">
+    Login →
+</button>
+
+<a href="register.html" class="btn btn-outline auth-btn register-btn">
+    Create Account
+</a>
+
+<p class="auth-foot">
+    Already have an invitation?
+    <a href="contact.html">Contact Sales</a>
+</p>
         </form>
       </div>
       <div id="forgot-panel" class="forgot-panel">
